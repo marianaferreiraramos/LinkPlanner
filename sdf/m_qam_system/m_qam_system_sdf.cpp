@@ -142,6 +142,11 @@ int main(){
 	//B4.setNumberOfSamples(numberOfBitsReceived*samplesPerSymbol);
 	//B4.setDisplayNumberOfSamples(true);
 
+<<<<<<< HEAD
+	Sink B3{ vector<Signal*> { &S2 }, vector<Signal*> {} };
+	B3.setDisplayNumberOfSamples(true);
+=======
+>>>>>>> develop
 
 	// #####################################################################################################
 	// ########################### System Declaration and Inicialization ###################################

@@ -7,6 +7,12 @@
 // Evaluates the input signal and outputs a binary key in accordance to the input values
 class BitDecider : public Block {
 
+	/* [DIA]
+	 * 
+	 * Falta adicionar os dois níveis distintos, setPosReferenceValue e
+	 * setNegReferenceValue (ver documentação).
+	 */
+
 	double decisionLevel{ 0.0 };
 
 public:

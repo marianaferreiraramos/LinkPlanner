@@ -15,10 +15,21 @@ int main(){
 	// #####################################################################################################
 
 	int numberOfBitsReceived(-1);
-	int numberOfBitsGenerated(10000);
+	
+	// [DIA] Original
+	//int numberOfBitsGenerated(10000);
+	// [DIA] Experiencia
+	int numberOfBitsGenerated(500);
+
 	int samplesPerSymbol(1);
 	double bitPeriod = 1.0 / 5e6;
-	double localOscillatorPower_dBm1 = -20;
+	
+	// [DIA] Original
+	//double localOscillatorPower_dBm1 = -20;
+	// [DIA] Experiencia (Potencia de 1 fotão por sinal)
+	double localOscillatorPower_dBm1 = -91.933;
+	//double localOscillatorPower_dBm1 = -20;
+	
 	double localOscillatorPower2 = 0; // Vacuum state
 	double localOscillatorPhase1 = 0;
 	double localOscillatorPhase2 = 0;
@@ -78,6 +89,12 @@ int main(){
 	B4.useNoise(true);
 	B4.setResponsivity(responsivity);
 
+	// [DIA] debug
+	Sink Bx{ vector<Signal*> {&S5}, vector<Signal*> {} };
+	Bx.setNumberOfSamples(samplesPerSymbol*numberOfBitsGenerated);
+	Bx.setDisplayNumberOfSamples(true);
+	// end debug
+
 	TI_Amplifier B5{ vector<Signal*> {&S5}, vector<Signal*> {&S6} };
 	B5.setGain(amplification);
 	B5.setElectricalNoiseSpectralDensity(electricalNoiseAmplitude);
@@ -95,7 +112,7 @@ int main(){
 	// ########################### System Declaration and Inicialization ###################################
 	// #####################################################################################################
 
-	System MainSystem{ vector<Block*> { &B1, &B2, &B3, &B4, &B5, &B6 } };
+	System MainSystem{ vector<Block*> { &B1, &B2, &B3, &B4, &Bx } };
 
 	// #####################################################################################################
 	// #################################### System Run #####################################################

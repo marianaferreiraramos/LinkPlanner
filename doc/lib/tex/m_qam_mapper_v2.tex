@@ -1,0 +1,44 @@
+\documentclass[../../sdf/tex/BPSK_system.tex]{subfiles}
+\graphicspath{{../../images/}}
+%opening
+\onlyinsubfile{\title{M-QAM Mapper}}
+\date{}
+
+\begin{document}
+
+\onlyinsubfile{\maketitle}
+	
+
+\subsection*{Input Parameters}
+
+\begin{itemize}
+	\item m 
+	\item iqAmplitudes 
+\end{itemize}
+
+\subsection*{Functional Description}
+
+This block does the mapping of the binary signal using a \textit{m}-QAM modulation. It atributes to each pair of bits a point in the I-Q space. The constellation is defined by the \textit{iqAmplitudes} vector.
+
+\subsection*{Input Signals}
+
+\textbf{Number}: 1
+
+\textbf{Type}: Binary (DiscreteTimeDiscreteAmplitude)
+
+\subsection*{Output Signals}
+
+\textbf{Number}: 2
+
+\textbf{Type}: Sequence of 1's and -1's (DiscreteTimeDiscreteAmplitude)
+
+\subsection*{Examples}
+
+\begin{figure}[h]
+    --- MISSING IMAGE ---
+	%\includegraphics[width=\textwidth]{MQAM2}
+\end{figure}
+
+\subsection*{Sugestions for future improvement}
+
+\end{document}

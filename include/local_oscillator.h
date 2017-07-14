@@ -23,8 +23,6 @@ class LocalOscillator : public Block {
 	bool quantumNoise{ false };
 
 	default_random_engine generatorRIN;
-	default_random_engine generatorPhas;
-	default_random_engine generatorShot;
 	double signaltoNoiseRatio = 0;
 
 public:

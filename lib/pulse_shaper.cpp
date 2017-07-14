@@ -58,6 +58,9 @@ void gaussian(vector<t_real> &impulseResponse, int impulseResponseLength, double
 	double gain{ 0 };
 	for (int i = 0; i < impulseResponseLength; i++) {
 		t_real t = -impulseResponseLength / 2 * samplingPeriod + i * samplingPeriod;
+		//DIA>
+		// Magic number -> 36 e pulsewidth
+		//END DIA>
 		gauss = exp(-t*t / (pulsewidth*pulsewidth/36));
 		impulseResponse[i] = gauss;
 		gain = gain + impulseResponse[i];

@@ -669,13 +669,17 @@ void System::run() {
 	do {
 		Alive = false;
 		for (unsigned int i = 0; i < SystemBlocks.size(); i++) {
+
 			bool aux = SystemBlocks[i]->runBlock();
+
 			Alive = (Alive || aux);
 		}
 	} while (Alive);
 
 	for (int unsigned i = 0; i < SystemBlocks.size(); i++) {
+		
 		SystemBlocks[i]->terminateBlock();
+
 	}
 }
 

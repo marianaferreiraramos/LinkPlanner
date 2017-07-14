@@ -34,51 +34,50 @@ bool Add::runBlock(void){
 
 	if (sType1!=sType2 || sTypeOut!=sType1)
 	{
-        cout << "ERRO: add.cpp (signal type mismatch!)" << "\n";
-        return false;
-    }
+		cout << "ERRO: add.cpp (signal type mismatch!)" << "\n";
+		return false;
+	}
 
 	switch (sType1)
 	{
+
 	case RealValue:
 	{
-					  for (int k = 0; k < process; k++)
-					  {
-						  t_real inRealValue1;
-						  inputSignals[0]->bufferGet(&inRealValue1);
-						  t_real inRealValue2;
-						  inputSignals[1]->bufferGet(&inRealValue2);
-						  t_real outRealValue = inRealValue1 + inRealValue2;
-						  outputSignals[0]->bufferPut(outRealValue);
-					  }
-					  break;
+		for (int k = 0; k < process; k++) {
+			t_real inRealValue1;
+			inputSignals[0]->bufferGet(&inRealValue1);
+			t_real inRealValue2;
+			inputSignals[1]->bufferGet(&inRealValue2);
+			t_real outRealValue = inRealValue1 + inRealValue2;
+			outputSignals[0]->bufferPut(outRealValue);
+		}
+		break;
 	}
-
-
+	
 	case ComplexValue:
 	{
-						 for (int k = 0; k < process; k++) {
-
-							 t_complex inComplexValue1;
-							 inputSignals[0]->bufferGet(&inComplexValue1);
-							 t_complex inComplexValue2;
-							 inputSignals[1]->bufferGet(&inComplexValue2);
-							 t_complex outComplexValue = inComplexValue1 + inComplexValue2;
-							 outputSignals[0]->bufferPut(outComplexValue);
-						 }
-						 break;
+		for (int k = 0; k < process; k++) {
+			t_complex inComplexValue1;
+			inputSignals[0]->bufferGet(&inComplexValue1);
+			t_complex inComplexValue2;
+			inputSignals[1]->bufferGet(&inComplexValue2);
+			t_complex outComplexValue = inComplexValue1 + inComplexValue2;
+			outputSignals[0]->bufferPut(outComplexValue);
+		}
+		break;
 	}
+	
 	case ComplexValueXY:
 	{
-						   for (int k = 0; k < process; k++) {
-							   t_complex_xy inComplexValueXY1;
-							   inputSignals[0]->bufferGet(&inComplexValueXY1);
-							   t_complex_xy inComplexValueXY2;
-							   inputSignals[1]->bufferGet(&inComplexValueXY2);
-							   t_complex_xy outComplexValueXY = { inComplexValueXY1.x + inComplexValueXY2.x, inComplexValueXY1.y + inComplexValueXY2.y };
-							   outputSignals[0]->bufferPut(outComplexValueXY);
-						   }
-						   break;
+		for (int k = 0; k < process; k++) {
+			t_complex_xy inComplexValueXY1;
+			inputSignals[0]->bufferGet(&inComplexValueXY1);
+			t_complex_xy inComplexValueXY2;
+			inputSignals[1]->bufferGet(&inComplexValueXY2);
+			t_complex_xy outComplexValueXY = { inComplexValueXY1.x + inComplexValueXY2.x, inComplexValueXY1.y + inComplexValueXY2.y };
+			outputSignals[0]->bufferPut(outComplexValueXY);
+		}
+		break;
 	}
 	/*case ComplexValueXY:
 	{
