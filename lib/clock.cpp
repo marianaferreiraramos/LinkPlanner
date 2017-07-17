@@ -23,17 +23,7 @@ bool Clock::runBlock(void) {
 
 	if (space == 0) return false;
 
-	int numberOfSamplesPerSymbol = (int)outputSignals[0]->getSamplesPerSymbol();
-
-	/*if (index != 0) {
-		for (int i = index; (i < numberOfSamplesPerSymbol) & (space>0); i++) {
-			outputSignals[0]->bufferPut(0);
-			space--;
-			index++;
-		};
-
-		index = index % numberOfSamplesPerSymbol;
-	};*/
+	int numberOfSamplesPerSymbol = (int)(outputSignals[0]->getSamplesPerSymbol());
 
 	for (int k = 0; k < space; k++) {
 

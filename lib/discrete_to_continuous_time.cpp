@@ -25,18 +25,19 @@ bool DiscreteToContinuousTime::runBlock(void) {
 	int ready = inputSignals[0]->ready();
 	int space = outputSignals[0]->space();
 	
-
 	if (index != 0) {
-		for (int i = index; (i < numberOfSamplesPerSymbol) & (space>0); i++) {
-			outputSignals[0]->bufferPut(0);
+		int length = min(space, numberOfSamplesPerSymbol - index);
+		if (length > 0) {
 			alive = true;
-			space--;
-			index++;
-		};
-		if (index == numberOfSamplesPerSymbol) index = 0;
+			for (int i = 1; i < length; i++) {
+				outputSignals[0]->bufferPut(0);
+				index++;
+			};
+		}
+		index = index % numberOfSamplesPerSymbol;
 	};
 
-	int length = min((int)ceil((double)space / (double)numberOfSamplesPerSymbol), ready);
+	int length = min((int)(floor(space / numberOfSamplesPerSymbol)), ready);
 
 	if (length <= 0) return alive;
 
@@ -78,6 +79,9 @@ bool DiscreteToContinuousTime::runBlock(void) {
 
 				myfile << "l=" << l << "\n";
 				l += 1;
+				if (l == 573) {
+					l = l;
+				}
 			}
 			return true;
 		case BinaryValue:
@@ -97,7 +101,7 @@ bool DiscreteToContinuousTime::runBlock(void) {
 					space--;
 					index++;
 				}
-				if (index == numberOfSamplesPerSymbol) index = 0;
+				index = index % numberOfSamplesPerSymbol;
 			}
 			return true;
 		default:
