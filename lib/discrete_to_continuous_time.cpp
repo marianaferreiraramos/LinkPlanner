@@ -12,24 +12,23 @@ void DiscreteToContinuousTime::initialize(void) {
 	outputSignals[0]->samplesPerSymbol = numberOfSamplesPerSymbol;
 	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
 
-	myfile.open("debug.txt");
-	myfile2.open("space.txt");
-	myfile3.open("length.txt");
-
+	myfile1.open("debug1.txt");
 }
 
 bool DiscreteToContinuousTime::runBlock(void) {
+
+	myfile1 << "count1=" << count1 << endl;
 
 	bool alive{ false };
 
 	int ready = inputSignals[0]->ready();
 	int space = outputSignals[0]->space();
 	
-	if (index != 0) {
+	if (index!=0) {
 		int length = min(space, numberOfSamplesPerSymbol - index);
 		if (length > 0) {
 			alive = true;
-			for (int i = 1; i < length; i++) {
+			for (int i = 0; i < length; i++) {
 				outputSignals[0]->bufferPut(0);
 				index++;
 			};
@@ -46,42 +45,21 @@ bool DiscreteToContinuousTime::runBlock(void) {
 		case RealValue:
 			for (int i = 0; i < length; i++) {
 
-				myfile3 << length << endl;
-
-				time = 0.0 + 0.04*contador;
-				if ((time > 6.7) & (time < 6.8)) {
-
-					time = 0.0 + 0.04*contador;
-
-				}
-
 				t_real value;
 				(inputSignals[0])->bufferGet(&value);
 				outputSignals[0]->bufferPut((t_real) value);
-				
-				myfile << value << "\n";
-			
-				myfile2 << space << endl;
-
-				contador++;
+						
 				space--;
 				index++;
 
 				for (int k = 1; (k<numberOfSamplesPerSymbol) & (space>0); k++) {
 					outputSignals[0]->bufferPut((t_real) 0.0);
 
-					myfile << 0 << "\n";
-
 					space--;
 					index++;
 				}
 				if (index == numberOfSamplesPerSymbol) index = 0;
 
-				myfile << "l=" << l << "\n";
-				l += 1;
-				if (l == 573) {
-					l = l;
-				}
 			}
 			return true;
 		case BinaryValue:
@@ -102,6 +80,8 @@ bool DiscreteToContinuousTime::runBlock(void) {
 					index++;
 				}
 				index = index % numberOfSamplesPerSymbol;
+
+				//if (space<=0) break;
 			}
 			return true;
 		default:
@@ -109,7 +89,6 @@ bool DiscreteToContinuousTime::runBlock(void) {
 			return false;
 	};
 
-	myfile.close();
-	myfile2.close();
-	myfile3.close();
+	count1++;
+
 };

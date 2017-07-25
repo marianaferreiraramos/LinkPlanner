@@ -66,6 +66,11 @@ class BinarySource : public Block {
 	void setBitPeriod(double bPeriod);
 	double const getBitPeriod(void) { return bitPeriod; }
 
+	int count;
+
+	ofstream myfile;
+	
+
 };
 
 # endif

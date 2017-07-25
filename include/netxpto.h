@@ -168,6 +168,9 @@ public:
 	void setCentralWavelength(double cWavelength){ centralWavelength = cWavelength; centralFrequency = SPEED_OF_LIGHT / centralWavelength; }
 	double getCentralWavelength(){ return centralWavelength; }
 
+	int GetOutPos() { return outPosition; };
+
+	int GetInPos() { return inPosition; };
 };
 
 
