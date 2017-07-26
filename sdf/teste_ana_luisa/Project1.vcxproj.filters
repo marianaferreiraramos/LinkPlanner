@@ -29,19 +29,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\lib\binary_source.cpp">
+    <ClCompile Include="teste_sdf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\netxpto.cpp">
+    <ClCompile Include="..\..\lib\binary_source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="t_m_qam_system.cpp">
+    <ClCompile Include="..\..\lib\discrete_to_continuous_time.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\sink.cpp">
+    <ClCompile Include="..\..\lib\netxpto.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\lib\discrete_to_continuous_time.cpp">
+    <ClCompile Include="..\..\lib\sink.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
