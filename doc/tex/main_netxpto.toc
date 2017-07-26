@@ -19,3 +19,5 @@
 \contentsline {section}{\numberline {6.8}Local Oscillator}{43}{section.6.8}
 \contentsline {section}{\numberline {6.9}MQAM mapper}{45}{section.6.9}
 \contentsline {section}{\numberline {6.10}MQAM transmitter}{48}{section.6.10}
+\contentsline {chapter}{\numberline {7}Mathlab Tools}{53}{chapter.7}
+\contentsline {section}{\numberline {7.1}sgnToWfm}{54}{section.7.1}
