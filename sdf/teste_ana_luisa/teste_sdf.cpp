@@ -13,8 +13,8 @@ int main() {
 	//Input parameters
 
 	int numberOfBitsReceived(-1);
-	int numberOfBitsGenerated = 5;
-	double bitPeriod = 1.0 / 50e9;
+	int numberOfBitsGenerated{ 5 };
+	double bitPeriod{ 1.0 / 50e9 };
 
 	//int prbsPatternLength = 5;
 
@@ -46,8 +46,8 @@ int main() {
 	B2.setNumberOfSamplesPerSymbol(samplesPerSymbol);
 
 	Sink B3{ vector<Signal *> { &S1 }, vector<Signal *> {} };
-	B3.setDisplayNumberOfSamples(numberOfBitsReceived);
-	B3.setNumberOfSamples(numberOfBitsGenerated);
+	B3.setDisplayNumberOfSamples(true);
+	B3.setNumberOfSamples(-1);
 
 	//System configuration
 
