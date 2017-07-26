@@ -10,6 +10,20 @@
 int main(){
 
 	// #####################################################################################################
+	// ################################### System Input Parameters #########################################
+	// #####################################################################################################
+
+	BinarySourceMode sourceMode{ PseudoRandom };
+	int patternLength{ 5 };
+	string bitStream{ "0" };
+	double bitPeriod{ 1.0 / 50e9 };
+	vector<t_iqValues> iqAmplitudes{ { { 1,1 },{ -1,1 },{ -1,-1 },{ 1,-1 } } };
+	int numberOfBits{ 1000 };
+	int numberOfSamplesPerSymbol{ 16 };
+	double rollOffFactor{ 0.3 };
+	int impulseResponseTimeLength{ 16 };
+
+	// #####################################################################################################
 	// ########################### Signals Declaration and Inicialization ##################################
 	// #####################################################################################################
 	
@@ -29,41 +43,46 @@ int main(){
 	
 	BandpassSignal S8{ "S8.sgn" };
 
+	Binary S9{ "S9.sgn" };
+
 	// #####################################################################################################
 	// ########################### Blocks Declaration and Inicialization ###################################
 	// #####################################################################################################
 
 
-	BinarySource B1{ vector<Signal*> {}, vector<Signal*> { &S1 } };
-	B1.setMode(PseudoRandom);
-	B1.setBitPeriod(1.0 / 50e9);
-	B1.setPatternLength(5);
-	B1.setNumberOfBits(10000);
+	BinarySource B1{ vector<Signal*> {}, vector<Signal*> { &S1, &S9 } };
+	B1.setMode(sourceMode);
+	B1.setPatternLength(patternLength);
+	B1.setBitStream(bitStream);
+	B1.setBitPeriod(bitPeriod);
+	B1.setNumberOfBits(numberOfBits);
 	
 	MQamMapper B2{ vector<Signal*> { &S1 }, vector<Signal*> { &S2, &S3 } };
-	//B2.setIqAmplitudes({ { 1, 1 }, { -1, 1 }, { 1, -1 }, { -1, -1 } });
+	B2.setIqAmplitudes(iqAmplitudes);
 
 	DiscreteToContinuousTime B3{ vector<Signal*> { &S2 }, vector<Signal*> { &S4 } };
-	B3.setNumberOfSamplesPerSymbol(16);
+	B3.setNumberOfSamplesPerSymbol(numberOfSamplesPerSymbol);
 	
 	DiscreteToContinuousTime B4{ vector<Signal*> { &S3 }, vector<Signal*> { &S5 } };
-	B4.setNumberOfSamplesPerSymbol(16);
+	B4.setNumberOfSamplesPerSymbol(numberOfSamplesPerSymbol);
 
 	PulseShaper B5{ vector<Signal*> { &S4 }, vector<Signal*> { &S6 } };
-	B5.setRollOffFactor(0.3);
-	B5.setImpulseResponseTimeLength(16);
+	B5.setRollOffFactor(rollOffFactor);
+	B5.setImpulseResponseTimeLength(impulseResponseTimeLength);
 	B5.setSeeBeginningOfImpulseResponse(false);
 
 	PulseShaper B6{ vector<Signal*> { &S5 }, vector<Signal*> { &S7 } };
-	B6.setRollOffFactor(0.3);
-	B6.setImpulseResponseTimeLength(16);
+	B6.setRollOffFactor(rollOffFactor);
+	B6.setImpulseResponseTimeLength(impulseResponseTimeLength);
 	B6.setSeeBeginningOfImpulseResponse(false);
 
 	IqModulator B7{ vector<Signal*> { &S6, &S7 }, vector<Signal*> { &S8 } };
 
 	Sink B8{ vector<Signal*> { &S8 }, vector<Signal*> {} };
-	B8.setNumberOfSamples(5000);
-	B8.setDisplayNumberOfSamples(true);
+	//B8.setNumberOfSamples(5000);
+	//B8.setDisplayNumberOfSamples(true);
+
+	Sink B9{ vector<Signal*> { &S9 }, vector<Signal*> {} };
 
 	// #####################################################################################################
 	// ########################### System Declaration and Inicialization ###################################

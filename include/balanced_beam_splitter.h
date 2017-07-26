@@ -29,11 +29,13 @@ public:
 	void initialize(void);
 	bool runBlock(void);
 
+//	void setTransferMatrix(array<complex<double>, 4> TransferMatrix) { matrix = TransferMatrix; }
+//	array<complex<double>, 4> const getTransferMatrix(void) { return matrix; }
+
 	void setTransferMatrix(array<t_complex, 4> TransferMatrix) { matrix = TransferMatrix; }
 
 
 	void setMode(t_real Mode) { mode = Mode; }
-
 
 private:
 

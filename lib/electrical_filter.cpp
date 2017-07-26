@@ -1,5 +1,11 @@
-# include "netxpto.h"
-# include "electrical_filter.h"
+#include <algorithm>
+#include <complex>
+#include <array>
+#include <vector>
+
+#include "netxpto.h"
+#include "electrical_filter.h"
+
 
 using namespace std;
 

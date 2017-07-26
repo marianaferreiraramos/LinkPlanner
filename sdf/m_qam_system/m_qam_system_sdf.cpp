@@ -9,6 +9,22 @@ int main(){
 
 	// #####################################################################################################
 	// #################################### System Input Parameters ########################################
+<<<<<<< HEAD
+	// #####################################################################################################
+
+	t_integer numberOfBitsGenerated(40);
+	t_integer samplesPerSymbol(32);
+	t_integer pLength = 5;
+	t_real bitPeriod = 1.0 / 50e9;
+	t_real rollOffFactor = 0.3;
+	vector<t_iqValues> iqAmplitudeValues = { { -1, 0 },{ 1, 0 } };
+	t_real signalOutputPower_dBm = -20;
+
+
+	// #####################################################################################################
+	// ########################### Signals Declaration and Inicialization ##################################
+=======
+>>>>>>> AnaLuisa
 	// #####################################################################################################
 
 	int numberOfBitsReceived(-1);
@@ -102,15 +118,36 @@ int main(){
 	B4.setNumberOfSamples(numberOfBitsReceived);
 	B4.setDisplayNumberOfSamples(true);
 
+<<<<<<< HEAD
+	MQamTransmitter B1{ vector<Signal*> {}, vector<Signal*> { &S1, &S2 } };
+	B1.setNumberOfBits(numberOfBitsGenerated);
+	B1.setOutputOpticalPower_dBm(signalOutputPower_dBm);
+	//B1.setMode(PseudoRandom);
+	B1.setMode(DeterministicAppendZeros);
+	B1.setBitStream("010");
+	B1.setBitPeriod(bitPeriod);
+	B1.setPatternLength(pLength);
+	B1.setIqAmplitudes(iqAmplitudeValues);
+	B1.setNumberOfSamplesPerSymbol(samplesPerSymbol);
+	B1.setRollOffFactor(rollOffFactor);
+	B1.setSaveInternalSignals(true);
+	B1.setSeeBeginningOfImpulseResponse(true);
+=======
 	//Without BER measurement
 	//Sink B3{ vector<Signal*> { &S0 }, vector<Signal*> {} };
 	//B3.setNumberOfSamples(numberOfBitsReceived*samplesPerSymbol);
 	//B3.setDisplayNumberOfSamples(true);
+>>>>>>> AnaLuisa
 
 	//Sink B4{ vector<Signal*> { &S2 }, vector<Signal*> {} };
 	//B4.setNumberOfSamples(numberOfBitsReceived*samplesPerSymbol);
 	//B4.setDisplayNumberOfSamples(true);
 
+<<<<<<< HEAD
+	Sink B3{ vector<Signal*> { &S2 }, vector<Signal*> {} };
+	B3.setDisplayNumberOfSamples(true);
+=======
+>>>>>>> develop
 
 	// #####################################################################################################
 	// ########################### System Declaration and Inicialization ###################################

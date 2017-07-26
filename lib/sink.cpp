@@ -8,8 +8,8 @@ using namespace std;
 
 Sink::Sink(vector<Signal *> &InputSig, vector<Signal *> &OutputSig) {
 
-  numberOfInputSignals = InputSig.size();
-  numberOfOutputSignals = OutputSig.size();
+  numberOfInputSignals = (int) InputSig.size();
+  numberOfOutputSignals = (int) OutputSig.size();
 
   inputSignals = InputSig;
 }

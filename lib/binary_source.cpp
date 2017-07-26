@@ -209,6 +209,7 @@ bool BinarySource::runBlock(void) {
 			}
 		}
 
+<<<<<<< HEAD
 		if (mode == DeterministicCyclic) {
 			std::vector<char> values(bitStream.begin(), bitStream.end());
 			int valuesSize = values.size();
@@ -219,6 +220,15 @@ bool BinarySource::runBlock(void) {
 				}
 				numberOfBits--;
 				posBitStream = posBitStream % valuesSize;
+=======
+	if (mode == DeterministicCyclic){
+		std::vector<char> values(bitStream.begin(), bitStream.end());
+		int valuesSize = (int) values.size();
+		for (int k = 0; k < process; k++) {
+			t_binary aux = (t_binary)(values[posBitStream++] - '0');
+			for (auto k = 0; k < numberOfOutputSignals; k++) {
+				outputSignals[k]->bufferPut((t_binary)aux);
+>>>>>>> develop
 			}
 
 		}
@@ -228,6 +238,7 @@ bool BinarySource::runBlock(void) {
 			int valuesSize = values.size();
 			t_binary aux;
 
+<<<<<<< HEAD
 			for (int k = 0; k < process; k++) {
 
 				if (posBitStream == valuesSize) {
@@ -240,6 +251,21 @@ bool BinarySource::runBlock(void) {
 					outputSignals[k]->bufferPut((t_binary)aux);
 				}
 				numberOfBits--;
+=======
+	if (mode == DeterministicAppendZeros){
+		std::vector<char> values(bitStream.begin(), bitStream.end());
+		int valuesSize = (int) values.size();
+		t_binary aux;
+		for (int k = 0; k < process; k++) {
+			if (posBitStream == valuesSize) {
+				aux = 0;
+			}
+			else {
+				aux = (t_binary)(values[posBitStream++] - '0');
+			}
+			for (auto k = 0; k < numberOfOutputSignals; k++) {
+				outputSignals[k]->bufferPut((t_binary)aux);
+>>>>>>> develop
 			}
 
 		}

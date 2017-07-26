@@ -16,18 +16,20 @@ public:
 	void initialize(void);
 	bool runBlock(void);
 
-	long int coincidences = 0;
-	long int receivedBits = 0;
+	double coincidences = 0;
+	double recievedBits = 0;
 
-	void setConfidence(t_real P) { alpha = 1-P; }
+	void setConfidence(double P) { alpha = 1-P; }
+	double const getConfidence(void) { return 1 - alpha; }
+
 	void setMidReportSize(int M) { m = M; }
+	int const getMidReportSize(void) { return m; }
 
 private:
-
 	int firstPass = 1;
 
-	t_real alpha = 0.05;
-	t_real z;
+	double alpha = 0.05;
+	double z;
 	int m = 0;
 	int n = 0;
 };

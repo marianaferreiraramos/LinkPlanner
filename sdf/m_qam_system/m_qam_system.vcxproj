@@ -89,9 +89,25 @@
     <ClCompile Include="..\..\lib\sampler.cpp" />
     <ClCompile Include="..\..\lib\sink.cpp" />
     <ClCompile Include="..\..\lib\super_block_interface.cpp" />
+<<<<<<< HEAD
+    <ClCompile Include="m_qam_system_sdf.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\binary_source.h" />
+    <ClInclude Include="..\..\include\discrete_to_continuous_time.h" />
+    <ClInclude Include="..\..\include\iq_modulator.h" />
+    <ClInclude Include="..\..\include\m_qam_mapper.h" />
+    <ClInclude Include="..\..\include\m_qam_transmitter.h" />
+    <ClInclude Include="..\..\include\netxpto.h" />
+    <ClInclude Include="..\..\include\pulse_shaper.h" />
+    <ClInclude Include="..\..\include\sink.h" />
+    <ClInclude Include="..\..\include\super_block_interface.h" />
+  </ItemGroup>
+=======
     <ClCompile Include="..\..\lib\ti_amplifier.cpp" />
     <ClCompile Include="m_qam_system_sdf.cpp" />
   </ItemGroup>
+>>>>>>> AnaLuisa
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

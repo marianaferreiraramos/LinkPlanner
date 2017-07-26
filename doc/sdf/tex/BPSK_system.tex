@@ -15,6 +15,7 @@
 \usepackage{multirow}
 \usepackage{tabulary}
 \usepackage{hhline}
+\usepackage{indentfirst}
 \RequirePackage{ltxcmds}[2010/12/07]
 \graphicspath{{../../images/}}
 %\graphicspath
@@ -38,7 +39,7 @@
 \section{Introduction}
 
 This document describes a model to simulate a BPSK transmission system in a back-to-back configuration.
-The only considered impairments are the thermal noise at the receiver.
+The only considered impairments are thermal noise at the receiver.
 
 \section{Functional Description}
 
@@ -65,34 +66,40 @@ BER Estimator    & BitErrorRate
 \end{table}
 
 \section{Required files}\label{Required files}
-%
+
 Header Files
 \begin{savenotes}
 \begin{table}[H]
 \centering
 \begin{tabulary}{1.0\textwidth}{|L|L|}
 \hline
-\textbf{File}          & \textbf{Description} 																 \\ \hline
-netxpto.h              & Generic purpose simulator definitions.		          										 \\
-\hline
+\textbf{File}            & \textbf{Description} 				                  \\ \hline
+netxpto.h                & Generic purpose simulator definitions.	              \\ \hline
+m\_qam\_transmitter.h    & Generates the signal with coded constellation.       \\ \hline
+homodyne\_reciever.h     & Performs coherent detection on the input signal.     \\ \hline
+sampler.h                & Samples the input signal at a use defined frequency. \\ \hline
+bit\_decider.h            & Decodes the input signal into a binary string.       \\ \hline
+bit\_error\_rate.h       & Calculates the bit error rate of the decoded string. \\ \hline
+sink.h                   & Closes any unused signals.                           \\ \hline
 \end{tabulary}
 \end{table}		
 \end{savenotes}	
 %
 Source Files
-Header Files
-\begin{savenotes}
 \begin{table}[H]
 \centering
 \begin{tabulary}{1.0\textwidth}{|L|L|}
 \hline
-\textbf{File}          & \textbf{Description} 																 \\ \hline
-netxpto.cpp            & Generic purpose simulator implementations.		          										 \\
-\hline
+\textbf{File}              & \textbf{Description} 					             \\ \hline
+netxpto.cpp                & Generic purpose simulator implementations.           \\ \hline
+m\_qam\_transmitter.cpp    &  Generates the signal with coded constellation.      \\ \hline
+homodyne\_reciever.cpp     & Performs coherent detection on the input signal.     \\ \hline
+sampler.cpp                & Samples the input signal at a use defined frequency. \\ \hline
+bit\_decider.cpp            & Decodes the input signal into a binary string.       \\ \hline
+bit\_error\_rate.cpp       & Calculates the bit error rate of the decoded string. \\ \hline
+sink.cpp                   & Closes any unused signals.                           \\ \hline
 \end{tabulary}
 \end{table}		
-\end{savenotes}	
-
 
 \section{System Input Parameters}
 
@@ -103,30 +110,29 @@ This system takes into account the following input parameters:
 \centering
 \begin{tabulary}{1.0\textwidth}{|C|C|}
 \hline
-\textbf{System Parameters}      & \textbf{Description} 																 \\ \hline
-NumberOfBits           & Gives the number of bits to be simulated		          										 \\ \hline
-BitPeriod              & Sets the time between adjacent bits                                                           \\ \hline
-SamplesPerSymbol       & Establishes the number of samples each bit in the string is given \footnotemark[1]	         \\ \hline
-pLength                & PRBS pattern length					                      									 \\ \hline
-iqAmplitudesValues     & Sets the state constellation																	 \\ \hline
-outOpticalPower\_dBm   & Sets the optical power, in units of dBm, at the transmitter output							 \\ \hline
-LOoutOpticalPower\_dBm & Sets the optical power, in units of dBm, of the local oscillator used in the homodyne detector \\ \hline
-LocalOscillatorPhase   & Sets the initial phase of the local oscillator used in the homodyne detector					 \\ \hline
-TransferMatrix         & Sets the transfer matrix of the beam splitter used in the homodyne detector					 \\ \hline
-Responsivity           & Sets the responsivity of the photodiodes used in the homodyne detector						 \\ \hline
-Amplification          & Sets the amplification of the trans-impedance amplifier used in the homodyne detector			 \\ \hline
-NoiseAmplitude         & Sets the amplitude of the gaussian thermal noise added in the homodyne detector				 \\ \hline
-Delay                  & Sets the delay factor of the homodyne detector												 \\ \hline
-PosReferenceValue      & \multirow{2}{*}{Set the positive and negative reference values for the bit decision block}     \\ \cline{1-1}
-NegReferenceValue      &                                                                                                \\ \hline
-Confidence             & Sets the confidence interval for the calculated QBER                                           \\ \hline
-MidReportSize          & Sets the number of bits between generated QBER mid-reports                                     \\
-\hline
+\textbf{System Parameters} & \textbf{Description} 																 \\ \hline
+numberOfBits               & Gives the number of bits to be simulated		          										 \\ \hline  
+bitPeriod                  & Sets the time between adjacent bits                                                           \\ \hline 
+samplesPerSymbol           & Establishes the number of samples each bit in the string is given \footnotemark[1]	         \\ \hline
+pLength                    & PRBS pattern length					                      									 \\ \hline  
+iqAmplitudesValues         & Sets the state constellation																	 \\ \hline  
+outOpticalPower\_dBm       & Sets the optical power, in units of dBm, at the transmitter output							 \\ \hline  
+loOutOpticalPower\_dBm     & Sets the optical power, in units of dBm, of the local oscillator used in the homodyne detector \\ \hline  
+localOscillatorPhase       & Sets the initial phase of the local oscillator used in the homodyne detector					 \\ \hline  
+transferMatrix             & Sets the transfer matrix of the beam splitter used in the homodyne detector					 \\ \hline  
+responsivity               & Sets the responsivity of the photodiodes used in the homodyne detector						 \\ \hline  
+amplification              & Sets the amplification of the trans-impedance amplifier used in the homodyne detector			 \\ \hline  
+noiseAmplitude             & Sets the amplitude of the gaussian thermal noise added in the homodyne detector				 \\ \hline  
+delay                      & Sets the delay factor of the homodyne detector												 \\ \hline  
+posReferenceValue          & \multirow{2}{*}{Set the positive and negative reference values for the bit decision block}     \\ \cline{1-1}
+negReferenceValue          &                                                                                                \\ \hline
+confidence                 & Sets the confidence interval for the calculated QBER                                           \\ \hline  
+midReportSize              & Sets the number of bits between generated QBER mid-reports                                     \\ \hline                   
 \end{tabulary}
 \end{table}		
 \end{savenotes}	
 
-\footnotetext[1]{Simulation time resolution = $\frac{\text{BitPeriod}}{\text{\text{SamplesPerSymbol}}}$}
+%\footnotetext[1]{Simulation time resolution = $\frac{\text{BitPeriod}}{\text{\text{SamplesPerSymbol}}}$}
 
 \section{Inputs}
 
@@ -138,9 +144,13 @@ This system outputs the following objects:
 \begin{itemize}
 \item Signals:
 \begin{itemize}
-\item Initial Binary String; (MQAM$_0$)
-\item Optical Signal with coded Binary String; (S$_{00}$)
-\item Decoded Binary String; (S$_{01}$)
+\item Initial Binary String; (S$_0$)
+\item Optical Signal with coded Binary String; (S$_{1}$)
+\item Local Oscillator Optical Signal; (S$_{2}$)
+\item Beam Splitter Outputs; (S$_{3}$, S$_{4}$)
+\item Homodyne Detector Electrical Output; (S$_{5}$)
+\item Decoded Binary String; (S$_{6}$)
+\item BER result String; (S$_{7}$)
 \end{itemize}
 \item Other:
 \begin{itemize}
@@ -150,7 +160,7 @@ This system outputs the following objects:
 
 \subsection{BER evolution}
 
-The following results show the dependence of the error rate with the signal power assuming a constant Local Oscillator power of $-20~dBm$. For reference, the eye diagram at 3 different power levels are also presented
+The following results show the dependence of the error rate with the signal power assuming a constant Local Oscillator power of $-20~dBm$. For reference, the eye diagram at 3 different power levels are also presented. The full line represents the expected results, note that it has been computed assuming a gaussian distribution of the thermal noise, which is not exact given the effect of the matched filter applied before the decoding of the bits, this explains the deviation between the simulation results and the expected values.
 
 \begin{figure}[H]
 \centering
@@ -190,18 +200,18 @@ The following results were obtained from the simulation using the following inpu
 \begin{table}[H]
 \centering
 \begin{tabular}{rl}
-NumberOfBits=           & 1000                                                     \\
-SamplesPerSymbol=       & 16                                                       \\
+numberOfBits=           & 1000                                                     \\
+samplesPerSymbol=       & 16                                                       \\
 pLength=                & 5                                                        \\
 iqAmplitudesValues=     & \{ \{ 1, 0 \}, \{ -1, 0 \} \}                            \\
 outOpticalPower\_dBm=   & -20                                                      \\
-LOoutOpticalPower\_dBm= & -10                                                      \\
-LocalOscillatorPhase=   & 0                                                        \\
-TransferMatrix=         & \{ \{ 1/sqrt(2), 1/sqrt(2), 1/sqrt(2), -1/sqrt(2) \} \}  \\
-Responsivity=           & 1                                                        \\
-Amplification=          & 1e6                                                      \\
-NoiseAmplitude=         & 15.397586549153788                                       \\
-Delay=                  & 9                                                        \\
+loOutOpticalPower\_dBm= & -10                                                      \\
+localOscillatorPhase=   & 0                                                        \\
+transferMatrix=         & \{ \{ 1/sqrt(2), 1/sqrt(2), 1/sqrt(2), -1/sqrt(2) \} \}  \\
+responsivity=           & 1                                                        \\
+amplification=          & 1e6                                                      \\
+noiseAmplitude=         & 15.397586549153788                                       \\
+delay=                  & 9                                                        \\
 \end{tabular}
 \end{table}
 
@@ -274,7 +284,7 @@ The result of the homodyne detection is the binary string presented in~\ref{fig:
 % subfile goes here
 
 \subsection{Homodyne Receiver}
-\subfile{../../lib/tex/homodyne_reciever}
+\subfile{../../lib/tex/i_homodyne_reciever}
 
 
 \subsection{Bit Error Rate}
@@ -290,10 +300,10 @@ The result of the homodyne detection is the binary string presented in~\ref{fig:
 \subfile{../../lib/tex/photodiode}
 
 \subsection{Amplifier}
-\subfile{../../lib/tex/amplifier}
+\subfile{../../lib/tex/ideal_amplifier}
 
 \subsection{Electrical Filter}
-\subfile{../../lib/tex/electrical_filter}
+\subfile{../../lib/tex/pulse_shaper}
 
 \subsection{Sampler}
 \subfile{../../lib/tex/sampler}

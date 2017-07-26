@@ -27,7 +27,7 @@ public:
 	/* Input Parameters */
 
 	t_integer m{ 4 };
-	vector<t_iqValues> iqAmplitudes;
+	vector<t_iqValues> iqAmplitudes;// {{ 1, 1 }, { -1, 1 }, { -1, -1 }, { 1, -1 } };
 
 
 	/* Methods */
