@@ -20,19 +20,10 @@ public:
 	void setNumberOfSamplesPerSymbol(int nSamplesPerSymbol){ numberOfSamplesPerSymbol = nSamplesPerSymbol; };
 	int const getNumberOfSamplesPerSymbol(void){ return numberOfSamplesPerSymbol; };
 
-	int contador{ 0 };
+	int count1;
 
-	int count{ 0 };
+	ofstream myfile1;
 
-	double time{ 0 };
-
-	ofstream myfile;
-
-	ofstream myfile2;
-
-	ofstream myfile3;
-
-	int l{ 0 };
-};
+	};
 
 #endif
