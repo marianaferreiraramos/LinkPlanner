@@ -6,15 +6,18 @@
 \contentsline {chapter}{\numberline {4}Visualizer}{5}{chapter.4}
 \contentsline {chapter}{\numberline {5}Case Studies}{6}{chapter.5}
 \contentsline {section}{\numberline {5.1}QPSK Transmitter}{6}{section.5.1}
-\contentsline {section}{\numberline {5.2}Quantum Noise}{7}{section.5.2}
-\contentsline {chapter}{\numberline {6}Library}{13}{chapter.6}
-\contentsline {section}{\numberline {6.1}Add}{14}{section.6.1}
-\contentsline {section}{\numberline {6.2}Binary source}{15}{section.6.2}
-\contentsline {section}{\numberline {6.3}Clock}{19}{section.6.3}
-\contentsline {section}{\numberline {6.4}Decoder}{21}{section.6.4}
-\contentsline {section}{\numberline {6.5}Discrete to continuous time}{24}{section.6.5}
-\contentsline {section}{\numberline {6.6}Homodyne receiver}{26}{section.6.6}
-\contentsline {section}{\numberline {6.7}IQ modulator}{30}{section.6.7}
-\contentsline {section}{\numberline {6.8}Local Oscillator}{32}{section.6.8}
-\contentsline {section}{\numberline {6.9}MQAM mapper}{34}{section.6.9}
-\contentsline {section}{\numberline {6.10}MQAM transmitter}{37}{section.6.10}
+\contentsline {section}{\numberline {5.2}Quantum Noise}{8}{section.5.2}
+\contentsline {section}{\numberline {5.3}Continuos Variable Quantum Transmission System}{14}{section.5.3}
+\contentsline {chapter}{\numberline {6}Library}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Add}{25}{section.6.1}
+\contentsline {section}{\numberline {6.2}Binary source}{26}{section.6.2}
+\contentsline {section}{\numberline {6.3}Clock}{30}{section.6.3}
+\contentsline {section}{\numberline {6.4}Decoder}{32}{section.6.4}
+\contentsline {section}{\numberline {6.5}Discrete to continuous time}{35}{section.6.5}
+\contentsline {section}{\numberline {6.6}Homodyne receiver}{37}{section.6.6}
+\contentsline {section}{\numberline {6.7}IQ modulator}{41}{section.6.7}
+\contentsline {section}{\numberline {6.8}Local Oscillator}{43}{section.6.8}
+\contentsline {section}{\numberline {6.9}MQAM mapper}{45}{section.6.9}
+\contentsline {section}{\numberline {6.10}MQAM transmitter}{48}{section.6.10}
+\contentsline {chapter}{\numberline {7}Mathlab Tools}{53}{chapter.7}
+\contentsline {section}{\numberline {7.1}sgnToWfm}{54}{section.7.1}

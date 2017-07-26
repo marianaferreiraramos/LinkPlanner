@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <algorithm>
 #include <complex>
 #include <array>
@@ -6,10 +5,7 @@
 
 #include "netxpto.h"
 #include "electrical_filter.h"
-=======
-# include "netxpto.h"
-# include "electrical_filter.h"
->>>>>>> AnaLuisa
+
 
 using namespace std;
 

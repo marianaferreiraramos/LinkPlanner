@@ -13,7 +13,7 @@ void BitErrorRate::initialize(void){
 }
 
 
-bool BitErrorRate::runBlock(void) {
+bool BitErrorRate::runBlock(void){
 
 	/* Computing z */ // This code converges in below 10 steps, exactness chosen in order to achieve this rapid convergence
 	if (firstPass)
@@ -24,7 +24,7 @@ bool BitErrorRate::runBlock(void) {
 		double x3 = x2 - (erf(x2 / sqrt(2)) + 1 - alpha)*(x2 - x1) / (erf(x2 / sqrt(2)) - erf(x1 / sqrt(2)));
 		double exacteness = 1e-15;
 
-		while (abs(erf(x3 / sqrt(2)) + 1 - alpha) > exacteness)
+		while (abs(erf(x3 / sqrt(2)) + 1 - alpha)>exacteness)
 		{
 			x3 = x2 - (erf(x2 / sqrt(2)) + 1 - alpha)*(x2 - x1) / (erf(x2 / sqrt(2)) - erf(x1 / sqrt(2)));
 			x1 = x2;
@@ -51,15 +51,7 @@ bool BitErrorRate::runBlock(void) {
 
 		/* Calculating BER and bounds */
 
-<<<<<<< HEAD
 		double BER = (recievedBits - coincidences) / recievedBits;
-=======
-		t_real NumberOfBits = receivedBits;
-		t_real Coincidences = coincidences;
-
-		t_real BER;
-		BER = (NumberOfBits - Coincidences) / NumberOfBits;
->>>>>>> AnaLuisa
 
 		double UpperBound = BER + 1 / sqrt(recievedBits) * z  * sqrt(BER*(1 - BER)) + 1 / (3 * recievedBits)*(2 * z * z * (1 / 2 - BER) + (2 - BER));
 		double LowerBound = BER - 1 / sqrt(recievedBits) * z  * sqrt(BER*(1 - BER)) + 1 / (3 * recievedBits)*(2 * z * z * (1 / 2 - BER) - (1 + BER));
@@ -88,11 +80,7 @@ bool BitErrorRate::runBlock(void) {
 		/* Outputting mid reports */
 		if (m > 0)
 		{
-<<<<<<< HEAD
 			if ((remainder(recievedBits, m) == 0) & (recievedBits>0))
-=======
-			if (remainder(receivedBits, m) == 0 && receivedBits>0)
->>>>>>> AnaLuisa
 			{
 				n++;
 
@@ -102,11 +90,6 @@ bool BitErrorRate::runBlock(void) {
 
 				/* Calculating BER and bounds */
 
-<<<<<<< HEAD
-=======
-				t_real NumberOfBits = receivedBits;
-				t_real Coincidences = coincidences;
->>>>>>> AnaLuisa
 
 				double BER;
 				BER = (recievedBits - coincidences) / recievedBits;
@@ -126,37 +109,19 @@ bool BitErrorRate::runBlock(void) {
 			}
 		}
 
-<<<<<<< HEAD
 		recievedBits++;
-=======
-		receivedBits++;
->>>>>>> AnaLuisa
 
 		if (signalValue == SignalValue)
 		{
 			coincidences++;
-<<<<<<< HEAD
 			outputSignals[0]->bufferPut((t_binary) 1);
 		}
 		else
 		{
 			outputSignals[0]->bufferPut((t_binary) 0);
-=======
-
-			outputSignals[0]->bufferPut(1);
-
-			translate2 << 1 << "\n";
-		}
-		else
-		{
-
-			outputSignals[0]->bufferPut(0);
-
-			translate2 << 0 << "\n";
->>>>>>> AnaLuisa
 		}
 
 	}
-		return true;
+	return true;
 
-	}
+}
