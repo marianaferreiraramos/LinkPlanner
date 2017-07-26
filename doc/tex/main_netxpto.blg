@@ -4,8 +4,11 @@ A level-1 auxiliary file: chapter/simulator_structure.aux
 A level-1 auxiliary file: chapter/development_cycle.aux
 A level-1 auxiliary file: chapter/visualizer.aux
 A level-1 auxiliary file: chapter/case_studies.aux
+The style file: unsrt.bst
 A level-1 auxiliary file: chapter/library.aux
-The style file: ieeetr.bst
-I found no \citation commands---while reading file main_netxpto.aux
-I found no \bibdata command---while reading file main_netxpto.aux
-(There were 2 error messages)
+Illegal, another \bibstyle command---line 31 of file main_netxpto.aux
+ : \bibstyle
+ :          {ieeetr}
+I'm skipping whatever remains of this command
+Database file #1: bibliography.bib
+(There was 1 error message)

@@ -1,3 +1,0 @@
-transmission_system_study.cpp
-    |-netxpto.h
-    |-

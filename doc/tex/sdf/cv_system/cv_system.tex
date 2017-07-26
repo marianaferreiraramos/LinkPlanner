@@ -33,10 +33,10 @@
 %
 %\begin{document}
 %\maketitle
-
+\clearpage
 \section{Continuos Variable Quantum Transmission System}\label{sec:intro}
 
-In this section a continuous varible qauntum transmission system is analyzed.
+In this section a continuous varible quantum transmission system is analyzed.
 The results here presented follow closely the~\cite{namiki2003security}.
 In~\cite{namiki2003security}, the security of a continuous variable quantum key distribution (CV-QKD) system is studied theoretically, here we complete that theoretical study with simulations results.
 
@@ -79,7 +79,7 @@ The density operator can be reduce to,
 
 where $1$ corresponds to the $45º$ base and $-1$ corresponds to $-45º$.
 
-\subsection{Single Base Homodyne Detection}
+\subsubsection*{Single Base Homodyne Detection}
 
 
 The probability of obtaining a quadrature $\hat{X}_\phi=\hat{X}_1\cos\phi+\hat{X}_2\sin\phi$ when measuring the coherent state $\ket{\alpha}$ is given by the following gaussian distribution:
@@ -122,7 +122,7 @@ Q(X_0,\alpha)=\frac{1}{P(X_0,\alpha)}\int_{-\infty}^{-X_0}\left|\braket{X_i|\alp
 
 
 
-\subsection{Double Homodyne setup}
+\subsubsection*{Double Homodyne setup}
 
 In our proposed double homodyne protocol both quadratures are measured simultaneously, as such the concept of correct and wrong basis measurements has no value. Our protocol also makes use of a locally generated Local Oscillator (LO), obtained from a different laser than the one used to generate the signal, thus we have to take into account the phase drift between both lasers. High intensity reference pulses are sent periodically to allow for an estimation of the phase drift. The double homodyne setup requires the signal to be divided into the two utilized detectors, so each measurement is made on a coherent state with half the amplitude of the incoming signal $\alpha\rightarrow\frac{\alpha}{\sqrt{2}}$
 \par
@@ -172,7 +172,7 @@ note that, in this definition for BER, only values $\theta\in\left[0,\frac{\pi}{
 \caption{Theoretical results for double homodyne setup.}
 \end{figure}
 
-\section{Functional Description}
+\subsection*{Functional Description}
 
 Simplified diagrams of the systems being simulated are presented in Figures~\ref{fig:singleH}. and~\ref{fig:doubleH}. Two optical signals are generated, one with a constant power level of 10~dBm and the other with power in multiples of the power corresponding to a single photon per sampling time (6.4078e$\times10^{-13}$~W for a sampling time of 200~ns). The two signals are mixed, with a Balanced Beam Splitter in the single homodyne case and with a 90$^\text{o}$ Optical Hybrid in the double homodyne one, and are subsequently evaluated with recourse to Homodyne Receivers.
 
@@ -206,7 +206,7 @@ Balanced Beam Splitter & BalancedBeamSplitter \\
 \end{table}
 
 \pagebreak
-\section{Required files}\label{Required files}
+\subsection*{Required files}\label{Required files}
 
 Header Files
 \begin{table}[H]
@@ -239,7 +239,7 @@ sink.cpp                     & Closes any unused signals.                       
 \end{table}
 
 
-\section{System Input Parameters}
+\subsection*{System Input Parameters}
 
 This system takes into account the following input parameters:
 \begin{table}[H]
@@ -262,11 +262,11 @@ shotNoise                  & Chooses if quantum shot noise is used in the simula
 \end{tabulary}
 \end{table}		
 
-\section{Inputs}
+\subsection*{Inputs}
 
 This system takes no inputs.
 %
-\section{Outputs}
+\subsection*{Outputs}
 
 The single homodyne system outputs the following objects:
 \begin{itemize}
@@ -290,8 +290,8 @@ The double homodyne system outputs the following objects:
 \end{itemize}
 \end{itemize}		
 
-\section{Simulation Results}
-\subsection{Single homodyne results}\label{subsec:SHresults}
+\subsection*{Simulation Results}
+\subsubsection*{Single homodyne results}\label{subsec:SHresults}
 
 The numerical results presented in Figure~\ref{fig:directber} were obtained with the simulation described by the block diagram in Figure~\ref{fig:singleH}. Theoretical results are a direct trace of~\eqref{eq:biterrorratio}. One can see that the numerical results adhere quite well to the expected curve.
 
@@ -302,7 +302,7 @@ The numerical results presented in Figure~\ref{fig:directber} were obtained with
 \label{fig:directber}
 \end{figure}
 
-\subsection{Double homodyne results}\label{subsec:DHresults}
+\subsubsection*{Double homodyne results}\label{subsec:DHresults}
 
 The numerical results presented in Figure~\ref{fig:adaptedber} were obtained with the simulation described by the block diagram in Figure~\ref{fig:doubleH}. Theoretical results are a direct trace of~\eqref{eq:adaptedBER} with $\theta=\frac{\pi}{4}$. One can see that the numerical results adhere quite well to the expected curve.
 
@@ -313,29 +313,29 @@ The numerical results presented in Figure~\ref{fig:adaptedber} were obtained wit
 \label{fig:adaptedber}
 \end{figure}
 
-\section{Block Description}
+%\section{Block Description}
+%
+%\subsection{Homodyne Receiver}
+%\subfile{./lib/i_homodyne_receiver}
+%
+%\subsection{Local Oscillator}
+%\subfile{./lib/localoscillator}
+%
+%\subsection{Beam Splitter}
+%\subfile{./lib/beamsplitter}
+%
+%\subsection{90$^\text{o}$ Optical Hybrid}
+%
+%\subsection{Photodiode}
+%\subfile{./lib/photodiode}
+%
+%\subsection{Amplifier}
+%\subfile{./lib/ideal_amplifier}
+%
+%\subsection{Electrical Filter}
+%\subfile{./lib/pulse_shaper}
 
-\subsection{Homodyne Receiver}
-\subfile{./lib/i_homodyne_receiver}
-
-\subsection{Local Oscillator}
-\subfile{./lib/localoscillator}
-
-\subsection{Beam Splitter}
-\subfile{./lib/beamsplitter}
-
-\subsection{90$^\text{o}$ Optical Hybrid}
-
-\subsection{Photodiode}
-\subfile{./lib/photodiode}
-
-\subsection{Amplifier}
-\subfile{./lib/ideal_amplifier}
-
-\subsection{Electrical Filter}
-\subfile{./lib/pulse_shaper}
-
-\section{Known Problems}
+\subsection*{Known Problems}
 \begin{enumerate}
     \item Homodyne Super-Block not functioning
     \item 90$^\text{o}$ Optical Hybrid PDF needs to be written
@@ -344,4 +344,4 @@ The numerical results presented in Figure~\ref{fig:adaptedber} were obtained wit
 
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
-\end{document} 
+%\end{document} 

@@ -16,7 +16,6 @@ public:
 	void initialize(void);
 	bool runBlock(void);
 
-<<<<<<< HEAD
 	double coincidences = 0;
 	double recievedBits = 0;
 
@@ -25,16 +24,8 @@ public:
 
 	void setMidReportSize(int M) { m = M; }
 	int const getMidReportSize(void) { return m; }
-=======
-	long int coincidences = 0;
-	long int receivedBits = 0;
-
-	void setConfidence(t_real P) { alpha = 1-P; }
-	void setMidReportSize(int M) { m = M; }
->>>>>>> AnaLuisa
 
 private:
-
 	int firstPass = 1;
 
 	double alpha = 0.05;

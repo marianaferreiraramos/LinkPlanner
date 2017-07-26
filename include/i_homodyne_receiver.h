@@ -54,7 +54,7 @@ public:
 
 	/* Set Methods */
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 	void setResponsivity(double Responsivity) { B1.setResponsivity(Responsivity); };
 	double const getResponsivity(void) { B1.getResponsivity(); }
 	void useShotNoise(bool uShotNoise){ B1.useNoise(uShotNoise); };
@@ -76,7 +76,7 @@ public:
     int const getImpulseResponseLength(void) { return B2.getImpulseResponseLength();};
     
 	void usePassiveFilterMode(bool pFilterMode){ B2.usePassiveFilterMode(pFilterMode); }
-=======
+/*=======
 	void setLocalOscillatorSamplingPeriod(double sPeriod) { B1.setSamplingPeriod(sPeriod); };
 	//void setLocalOscillatorSymbolPeriod(double sPeriod) { B1.setSymbolPeriod(sPeriod); }
 	void setLocalOscillatorOpticalPower(double opticalPower) { B1.setOpticalPower(opticalPower); };
@@ -96,7 +96,7 @@ public:
 	void setSamplesToSkip(int sToSkip) { B5.setSamplesToSkip(sToSkip); };
 
 	void setDecionLevel(int dLevel) { B6.setDecisionLevel(dLevel); };
->>>>>>> AnaLuisa
+>>>>>>> AnaLuisa*/
 
 };
 
