@@ -34,7 +34,7 @@ class BinarySource : public Block {
 
 	 double probabilityOfZero{ 0.5 };
 	 int patternLength{ 7 };
-	 string bitStream{ "0100011101010101" };
+	 string bitStream{ "00" };
 
 	 long int numberOfBits{ -1 };
 	 double bitPeriod{ 1.0 / 100e9 };
@@ -65,6 +65,11 @@ class BinarySource : public Block {
 	
 	void setBitPeriod(double bPeriod);
 	double const getBitPeriod(void) { return bitPeriod; }
+
+	int count;
+
+	ofstream myfile;
+	
 
 };
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6200) (preloaded format=pdflatex 2017.1.6)  24 MAR 2017 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6200) (preloaded format=pdflatex 2017.1.6)  17 MAY 2017 23:18
 entering extended mode
 **./m_qam_system.tex
 (m_qam_system.tex
@@ -523,6 +523,14 @@ File: babel.def 2016/04/23 3.9r Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
+("C:\Program Files\MiKTeX\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen132
+\extrarowheight=\dimen133
+\NC@list=\toks23
+\extratabsurround=\skip48
+\backup@length=\skip49
+)
 ("C:\Program Files\MiKTeX\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
@@ -575,7 +583,7 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 ("C:\Program Files\MiKTeX\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen132
+\@linkdim=\dimen134
 \Hy@linkcounter=\count113
 \Hy@pagecounter=\count114
 
@@ -603,10 +611,10 @@ Package hyperref Info: Bookmarks ON on input line 4735.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5088.
-\XeTeXLinkMargin=\dimen133
+\XeTeXLinkMargin=\dimen135
 \Fld@menulength=\count117
-\Field@Width=\dimen134
-\Fld@charsize=\dimen135
+\Field@Width=\dimen136
+\Fld@charsize=\dimen137
 Package hyperref Info: Hyper figures OFF on input line 6342.
 Package hyperref Info: Link nesting OFF on input line 6347.
 Package hyperref Info: Hyper index ON on input line 6350.
@@ -633,26 +641,25 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip48
+\Hy@SectionHShift=\skip50
 )
-(m_qam_system.aux)
+No file m_qam_system.aux.
 \openout1 = `m_qam_system.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -690,16 +697,16 @@ LaTeX Font Info:    ... okay on input line 15.
 ("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
-\scratchdimen=\dimen136
+\scratchdimen=\dimen138
 \scratchbox=\box54
 \nofMPsegments=\count124
 \nofMParguments=\count125
-\everyMPshowfont=\toks23
+\everyMPshowfont=\toks24
 \MPscratchCnt=\count126
-\MPscratchDim=\dimen137
+\MPscratchDim=\dimen139
 \MPnumerator=\count127
 \makeMPintoPDFobject=\count128
-\everyMPtoPDFconversion=\toks24
+\everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -714,7 +721,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box55
-Package hyperref Info: Link coloring OFF on input line 15.
+Package hyperref Info: Link coloring OFF on input line 17.
 
 ("C:\Program Files\MiKTeX\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -724,11 +731,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count129
 )
-LaTeX Info: Redefining \ref on input line 15.
-LaTeX Info: Redefining \pageref on input line 15.
-LaTeX Info: Redefining \nameref on input line 15.
-
-(m_qam_system.out) (m_qam_system.out)
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 \@outlinefile=\write3
 \openout3 = `m_qam_system.out'.
 
@@ -736,41 +741,27 @@ LaTeX Info: Redefining \nameref on input line 15.
 
 LaTeX Warning: No \author given.
 
-<MQAM_system_block_diagram.png, id=8, 712.91344pt x 330.48468pt>
-File: MQAM_system_block_diagram.png Graphic file (type png)
 
-<use MQAM_system_block_diagram.png>
-Package pdftex.def Info: MQAM_system_block_diagram.png used on input line 25.
-(pdftex.def)             Requested size: 333.46758pt x 154.58148pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 44.
- [1
+! LaTeX Error: File `../m_qam_system.tex' not found.
 
-{C:/Users/Ana Luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./MQAM_
-system_block_diagram.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
 
-(m_qam_system.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
-Package rerunfilecheck Info: File `m_qam_system.out' has not changed.
-(rerunfilecheck)             Checksum: 007829BC97350DB9A54D0B15E8562661;58.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
- ) 
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.21 \input{../m_qam_system}
+                            
+*** (cannot \read from terminal in nonstop modes)
+
+ 
 Here is how much of TeX's memory you used:
- 6912 strings out of 493343
- 97534 string characters out of 3141189
- 201163 words of memory out of 3000000
- 10356 multiletter control sequences out of 15000+200000
- 7954 words of font info for 29 fonts, out of 3000000 for 9000
+ 6925 strings out of 493343
+ 97554 string characters out of 3141189
+ 200701 words of memory out of 3000000
+ 10382 multiletter control sequences out of 15000+200000
+ 7349 words of font info for 27 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,6n,28p,300b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmr17.pfb>
-Output written on m_qam_system.pdf (1 page, 58231 bytes).
-PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
- 14 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 29i,6n,25p,253b,180s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

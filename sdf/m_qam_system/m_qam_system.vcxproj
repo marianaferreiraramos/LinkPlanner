@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -13,13 +13,14 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F3D17ED7-6A4A-4DFC-8F1B-33FF541EB52D}</ProjectGuid>
     <RootNamespace>m_qam_system</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -50,6 +51,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -89,26 +91,6 @@
     <ClCompile Include="..\..\lib\super_block_interface.cpp" />
     <ClCompile Include="..\..\lib\ti_amplifier.cpp" />
     <ClCompile Include="m_qam_system_sdf.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\include\binary_source.h" />
-    <ClInclude Include="..\..\include\bit_error_rate.h" />
-    <ClInclude Include="..\..\include\clock.h" />
-    <ClInclude Include="..\..\include\decoder.h" />
-    <ClInclude Include="..\..\include\discrete_to_continuous_time.h" />
-    <ClInclude Include="..\..\include\homodyne_receiver.h" />
-    <ClInclude Include="..\..\include\iq_modulator.h" />
-    <ClInclude Include="..\..\include\local_oscillator.h" />
-    <ClInclude Include="..\..\include\m_qam_mapper.h" />
-    <ClInclude Include="..\..\include\m_qam_transmitter.h" />
-    <ClInclude Include="..\..\include\netxpto.h" />
-    <ClInclude Include="..\..\include\optical_hybrid.h" />
-    <ClInclude Include="..\..\include\photodiode.h" />
-    <ClInclude Include="..\..\include\pulse_shaper.h" />
-    <ClInclude Include="..\..\include\sampler.h" />
-    <ClInclude Include="..\..\include\sink.h" />
-    <ClInclude Include="..\..\include\super_block_interface.h" />
-    <ClInclude Include="..\..\include\ti_amplifier.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

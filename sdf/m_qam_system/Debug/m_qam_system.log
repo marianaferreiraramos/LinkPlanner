@@ -1,28 +1,3 @@
-﻿  m_qam_system_sdf.cpp
-  ti_amplifier.cpp
-  super_block_interface.cpp
-  sink.cpp
-  sampler.cpp
-  pulse_shaper.cpp
-  photodiode.cpp
-  optical_hybrid.cpp
-  netxpto.cpp
-  m_qam_transmitter.cpp
-  m_qam_mapper.cpp
-  local_oscillator.cpp
-  iq_modulator.cpp
-  homodyne_receiver.cpp
-  discrete_to_continuous_time.cpp
-  decoder.cpp
-  clock.cpp
-<<<<<<< HEAD
-c:\users\ana luisa\documents\github\analuisa\lib\clock.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-=======
-c:\netxpto\analuisa\lib\clock.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
->>>>>>> 75164fba1e2df7dda5409bc7edfbeb513facf1ac
-  bit_error_rate.cpp
-  binary_source.cpp
-  Generating Code...
-c:\netxpto\analuisa\lib\sampler.cpp(126): warning C4715: 'Sampler::runBlock': not all control paths return a value
-  m_qam_system.vcxproj -> C:\netxpto\AnaLuisa\sdf\m_qam_system\Debug\m_qam_system.exe
-  m_qam_system.vcxproj -> C:\netxpto\AnaLuisa\sdf\m_qam_system\Debug\m_qam_system.pdb (Full PDB)
+﻿  binary_source.cpp
+  m_qam_system.vcxproj -> C:\Users\Ana Luisa\Documents\GitHub\AnaLuisa\sdf\m_qam_system\Debug\m_qam_system.exe
+  m_qam_system.vcxproj -> C:\Users\Ana Luisa\Documents\GitHub\AnaLuisa\sdf\m_qam_system\Debug\m_qam_system.pdb (Full PDB)

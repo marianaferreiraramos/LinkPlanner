@@ -129,6 +129,8 @@ public:
 
 	void setSamplesToSkip(int sToSkip) { B10.setSamplesToSkip(sToSkip); B11.setSamplesToSkip(sToSkip); };
 
+	void setSamplerOpticalPower_dBm(double optPower_dBm) { B10.setOutputOpticalPower_dBm(optPower_dBm); };
+
 };
 
 #endif

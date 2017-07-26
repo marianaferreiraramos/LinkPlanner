@@ -36,18 +36,18 @@ bool Photodiode::runBlock(void) {
 	t_real E0 = 8.854187817e-12;
 	t_real n = 1.1;*/
 
-	for (int i = 0; i < process; i++) {
+	t_complex inputSignal1;
+	t_complex inputSignal2;
 
-			t_complex inputSignal1;
-			t_complex inputSignal2;
+	for (int i = 0; i < process; i++) {
 
 			inputSignals[0]->bufferGet(&inputSignal1);
 			inputSignals[1]->bufferGet(&inputSignal2);
 
-			t_real power1 = abs(inputSignal1)*abs(inputSignal1) *2;
+			t_real power1 = abs(inputSignal1)*abs(inputSignal1)*2; 
 			t_real current1 = responsivity * power1;
 
-			t_real power2 = abs(inputSignal2)*abs(inputSignal2) *2;
+			t_real power2 = abs(inputSignal2)*abs(inputSignal2)*2;
 			t_real current2 = responsivity * power2;
 
 			t_real outputSignal = current1 - current2;

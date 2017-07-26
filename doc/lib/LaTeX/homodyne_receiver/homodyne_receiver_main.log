@@ -1,14 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.11)  13 APR 2017 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6200) (preloaded format=pdflatex 2017.1.6)  17 MAY 2017 23:15
 entering extended mode
-**C:/netxpto/AnaLuisa/doc/lib/LaTeX/homodyne_receiver/homodyne_receiver_main.te
-x
-
-(C:/netxpto/AnaLuisa/doc/lib/LaTeX/homodyne_receiver/homodyne_receiver_main.tex
+**./homodyne_receiver_main.tex
+(homodyne_receiver_main.tex
 LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Babel <3.9r> and hyphenation patterns for 73 language(s) loaded.
+("C:\Program Files\MiKTeX\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Program Files\MiKTeX\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,21 +21,21 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Program Files\MiKTeX\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files\MiKTeX\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count87
@@ -53,25 +51,25 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/06/28 v2.15d AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks16
 \ex@=\dimen111
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen112
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count90
@@ -112,7 +110,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+("C:\Program Files\MiKTeX\tex\latex\tools\multicol.sty"
 Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \c@tracingmulticols=\count102
 \mult@box=\box28
@@ -161,27 +159,27 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \colbreak@box=\box53
 \mc@col@check@num=\count110
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX\tex\latex\graphics\graphics.sty"
 Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count111
@@ -189,19 +187,19 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen129
 \Gin@req@width=\dimen130
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks21
 \inpenc@posthook=\toks22
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Program Files\MiKTeX\tex\latex\base\utf8.def"
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Program Files\MiKTeX\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -438,7 +436,7 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Program Files\MiKTeX\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -479,7 +477,7 @@ File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Program Files\MiKTeX\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -503,20 +501,20 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files\MiKTeX\tex\generic\babel\babel.sty"
 Package: babel 2016/04/23 3.9r The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\anp\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
+("C:\Program Files\MiKTeX\tex\latex\arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+("C:\Program Files\MiKTeX\tex\latex\babel-english\english.ldf"
 Language: english 2012/08/20 v3.3p English support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files\MiKTeX\tex\generic\babel\babel.def"
 File: babel.def 2016/04/23 3.9r Babel common definitions
 \babel@savecnt=\count112
 \U@D=\dimen131
@@ -525,7 +523,7 @@ File: babel.def 2016/04/23 3.9r Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Program Files\MiKTeX\tex\latex\tools\array.sty"
 Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen132
 \extrarowheight=\dimen133
@@ -533,14 +531,14 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip48
 \backup@length=\skip49
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files\MiKTeX\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -579,24 +577,24 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen134
 \Hy@linkcounter=\count113
 \Hy@pagecounter=\count114
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Program Files\MiKTeX\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count115
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files\MiKTeX\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4486.
@@ -608,7 +606,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count116
 
-(C:\Users\anp\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+("C:\Program Files\MiKTeX\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -633,12 +631,12 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files\MiKTeX\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
 \Fld@listcount=\count121
 \c@bookmark@seq@number=\count122
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -697,7 +695,7 @@ LaTeX Font Info:    ... okay on input line 17.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\anp\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
 \scratchdimen=\dimen138
@@ -710,10 +708,10 @@ LaTeX Font Info:    ... okay on input line 17.
 \MPnumerator=\count127
 \makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks25
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+) ("C:\Program Files\MiKTeX\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Program Files\MiKTeX\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -726,10 +724,10 @@ G,.JBIG2,.JB2,.eps]
 \AtBeginShipoutBox=\box55
 Package hyperref Info: Link coloring OFF on input line 17.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+("C:\Program Files\MiKTeX\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Program Files\MiKTeX\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count129
@@ -748,8 +746,8 @@ LaTeX Warning: No \author given.
 
 (homodyne_receiver.tex [1
 
-{C:/Users/anp/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<figures/MQAM_receiver_block_diagram_simple.png, id=20, 1139.00531pt x 149.8097
+{C:/Users/Ana Luisa/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<figures/MQAM_receiver_block_diagram_simple.png, id=48, 1139.00531pt x 149.8097
 pt>
 File: figures/MQAM_receiver_block_diagram_simple.png Graphic file (type png)
  <use figures/MQAM_receiver_block_diagram_simple.png>
@@ -757,7 +755,7 @@ Package pdftex.def Info: figures/MQAM_receiver_block_diagram_simple.png used on
  input line 9.
 (pdftex.def)             Requested size: 333.46758pt x 43.85973pt.
 
-<figures/MQAM_receiver_block_diagram.png, id=23, 2048.40282pt x 726.46407pt>
+<figures/MQAM_receiver_block_diagram.png, id=51, 2048.40282pt x 726.46407pt>
 File: figures/MQAM_receiver_block_diagram.png Graphic file (type png)
 
 <use figures/MQAM_receiver_block_diagram.png>
@@ -766,7 +764,7 @@ line 22.
 (pdftex.def)             Requested size: 416.83289pt x 147.82869pt.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 35.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files\MiKTeX\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -830,37 +828,174 @@ lock(InputSig,
 
 [5
 
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 24.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 24.
+]) (../optical_hybrid/optical_hybrid.tex [6]
+<../homodyne_receiver/figures/optical_hybrid.png, id=105, 615.0478pt x 196.4840
+7pt>
+File: ../homodyne_receiver/figures/optical_hybrid.png Graphic file (type png)
+ <use ../homodyne_receiver/figures/optical_hybrid.png>
+Package pdftex.def Info: ../homodyne_receiver/figures/optical_hybrid.png used o
+n input line 8.
+(pdftex.def)             Requested size: 250.10226pt x 79.8994pt.
+
+Overfull \hbox (3.05704pt too wide) in paragraph at lines 25--26
+[]\OT1/cmr/m/n/10 OpticalHybrid(vector$\OML/cmm/m/it/10 <$\OT1/cmr/m/n/10 Signa
+l *$\OML/cmm/m/it/10 >$ \OT1/cmr/m/n/10 &In-put-Sig, vector$\OML/cmm/m/it/10 <$
+\OT1/cmr/m/n/10 Signal *$\OML/cmm/m/it/10 >$ \OT1/cmr/m/n/10 &Out-put-Sig) :Blo
+ck(InputSig,
+ []
+
+[7
+
+ <../homodyne_receiver/figures/optical_hybrid.png>]
+<../homodyne_receiver/figures/OpticalHybrid_output.jpg, id=117, 562.1pt x 421.5
+75pt>
+File: ../homodyne_receiver/figures/OpticalHybrid_output.jpg Graphic file (type 
+jpg)
+ <use ../homodyne_receiver/figures/OpticalHybrid_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/OpticalHybrid_output.jpg 
+used on input line 63.
+(pdftex.def)             Requested size: 416.83289pt x 312.62317pt.
+)
+(../photodiode/photodiode.tex [8 <../homodyne_receiver/figures/OpticalHybrid_ou
+tput.jpg>]
+<../homodyne_receiver/figures/photodiode.png, id=132, 654.94687pt x 406.51875pt
+>
+File: ../homodyne_receiver/figures/photodiode.png Graphic file (type png)
+ <use ../homodyne_receiver/figures/photodiode.png>
+Package pdftex.def Info: ../homodyne_receiver/figures/photodiode.png used on in
+put line 8.
+(pdftex.def)             Requested size: 208.41644pt x 129.3629pt.
+ [9
+
+ <../homodyne_receiver/figures/photodiode.png>]
+<../homodyne_receiver/figures/Photodiode_output.jpg, id=143, 562.1pt x 419.5675
+pt>
+File: ../homodyne_receiver/figures/Photodiode_output.jpg Graphic file (type jpg
+)
+ <use ../homodyne_receiver/figures/Photodiode_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/Photodiode_output.jpg use
+d on input line 54.
+(pdftex.def)             Requested size: 416.83289pt x 311.13449pt.
+)
+(../TIAmplifier/TIAmplifier.tex [10 <../homodyne_receiver/figures/Photodiode_ou
+tput.jpg>] [11
+
+]
+<../homodyne_receiver/figures/TIAmplifier_output.jpg, id=164, 562.1pt x 419.567
+5pt>
+File: ../homodyne_receiver/figures/TIAmplifier_output.jpg Graphic file (type jp
+g)
+ <use ../homodyne_receiver/figures/TIAmplifier_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/TIAmplifier_output.jpg us
+ed on input line 53.
+(pdftex.def)             Requested size: 416.83289pt x 311.13449pt.
+)
+(../pulse_shaper/pulse_shaper.tex [12 <../homodyne_receiver/figures/TIAmplifier
+_output.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+[]\OT1/cmr/m/n/10 filterType\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 RaisedCosine\OMS/
+cmsy/m/n/10 g
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+[]\OT1/cmr/m/n/10 impulseResponseTimeLength\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 16
+\OMS/cmsy/m/n/10 g
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+\OT1/cmr/m/n/10 (int)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+[]\OT1/cmr/m/n/10 rollOfFactor\OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 0.9\OMS/cmsy/m/
+n/10 g
+ []
+
+
+<../homodyne_receiver/figures/PulseShaper_output.jpg, id=178, 562.1pt x 419.567
+5pt>
+File: ../homodyne_receiver/figures/PulseShaper_output.jpg Graphic file (type jp
+g)
+ <use ../homodyne_receiver/figures/PulseShaper_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/PulseShaper_output.jpg us
+ed on input line 57.
+(pdftex.def)             Requested size: 416.83289pt x 311.13449pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (../sampler/sampler.tex [13
+
+] [14 <../homodyne_receiver/figures/PulseShaper_output.jpg>] [15
+
+]
+<../homodyne_receiver/figures/Sampler_output.jpg, id=207, 562.1pt x 419.5675pt>
+File: ../homodyne_receiver/figures/Sampler_output.jpg Graphic file (type jpg)
+<use ../homodyne_receiver/figures/Sampler_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/Sampler_output.jpg used o
+n input line 60.
+(pdftex.def)             Requested size: 416.83289pt x 311.13449pt.
+) (../clock/clock.tex
+[16 <../homodyne_receiver/figures/Sampler_output.jpg>] [17
+
+]
+<../homodyne_receiver/figures/Clock_output.jpg, id=228, 562.1pt x 419.5675pt>
+File: ../homodyne_receiver/figures/Clock_output.jpg Graphic file (type jpg)
+
+<use ../homodyne_receiver/figures/Clock_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/Clock_output.jpg used on 
+input line 47.
+(pdftex.def)             Requested size: 416.83289pt x 311.13449pt.
+) (../decoder/decoder.tex
+[18 <../homodyne_receiver/figures/Clock_output.jpg>] [19
+
+]
+<../homodyne_receiver/figures/Decoder_output.jpg, id=249, 562.1pt x 419.5675pt>
+File: ../homodyne_receiver/figures/Decoder_output.jpg Graphic file (type jpg)
+<use ../homodyne_receiver/figures/Decoder_output.jpg>
+Package pdftex.def Info: ../homodyne_receiver/figures/Decoder_output.jpg used o
+n input line 58.
+(pdftex.def)             Requested size: 416.83289pt x 311.13449pt.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
+ [20 <../homodyne_receiver/figures/Decoder_output.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
  (homodyne_receiver_main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 24.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 24.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 31.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
 Package rerunfilecheck Info: File `homodyne_receiver_main.out' has not changed.
 
-(rerunfilecheck)             Checksum: F1D33725BDB833490FC563E57C36A872;105.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 24.
+(rerunfilecheck)             Checksum: 0365537559FE58288AAF0A5C5FA3EBC3;424.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 31.
  ) 
 Here is how much of TeX's memory you used:
- 7030 strings out of 493334
- 100044 string characters out of 3139257
- 210091 words of memory out of 3000000
- 10434 multiletter control sequences out of 15000+200000
- 9369 words of font info for 34 fonts, out of 3000000 for 9000
+ 7230 strings out of 493343
+ 103405 string characters out of 3141189
+ 210932 words of memory out of 3000000
+ 10484 multiletter control sequences out of 15000+200000
+ 10235 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,11n,28p,485b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmti10.pfb>
-Output written on homodyne_receiver_main.pdf (6 pages, 171982 bytes).
+ 29i,11n,28p,541b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on homodyne_receiver_main.pdf (20 pages, 446059 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 27 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 326 PDF objects out of 1000 (max. 8388607)
+ 139 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -27,6 +27,10 @@ void Decoder::setM(int mValue) {
 
 		iqAmplitudes = { { 1.0, 1.0 },{ -1.0, 1.0 },{ -1.0, -1.0 },{ 1.0, -1.0 } };
 
+	case 16:
+
+		iqAmplitudes = { { -3.0, -3.0 },{ -3.0, -1.0 },{ -3.0, 1.0 },{ -3.0, 3.0 },{ -1.0, -3.0 },{ -1.0, -1.0 },{ -1.0, 3.0 },{ -1.0, 1.0 },{ 3.0, -3.0 },{ 3.0, -1.0 },{ 3.0, 3.0 },{ 3.0, 1.0 },{ 1.0, -3.0 },{ 1.0, -1.0 },{ 1.0, 3.0 },{ 1.0, 1.0 } };
+
 	};
 };
 
@@ -42,9 +46,10 @@ bool Decoder::runBlock(void) {
 	int ready1 = inputSignals[1]->ready();
 	int ready = min(ready0, ready1);
 
-	int space = outputSignals[0]->space();
-	int process = (int)floor(space / log2(m));
-	process = min(ready, process);
+	int space0 = outputSignals[0]->space();
+	int proc = (int)floor(space0 / log2(m));
+
+	int process = min(ready, proc);
 
 	if (process == 0) return false;
 
@@ -52,7 +57,7 @@ bool Decoder::runBlock(void) {
 	double d, minimum;
 	
 	for (int k = 0; k < process; k++) {
-		
+
 		inputSignals[0]->bufferGet(&in1);
 		inputSignals[1]->bufferGet(&in2);
 
@@ -66,6 +71,8 @@ bool Decoder::runBlock(void) {
 				aux = l;
 			}
 		}
+
+
 		// Makes the bits swtich order: example 01 is writen as 10
 		/*for (int n = 0; n < log2(m); n++) {
 
@@ -74,18 +81,34 @@ bool Decoder::runBlock(void) {
 			aux = aux / 2; //returns the quocient of the division
 		}*/
 		t_binary s_out;
+		vector<t_binary> v((t_binary)log2(m), 0);
+		/*for (int n = 0; n < log2(m); n++) {
+
+		if (n > 0) { s_out = aux % 2; }
+
+		else { s_out = aux / 2; }
+
+		outputSignals[0]->bufferPut(s_out);
+		aux = aux % 2;
+	}*/
 
 		for (int n = 0; n < log2(m); n++) {
 
-			if (n > 0) { s_out = aux % 2; }
-			
-			else { s_out = aux / 2; }
+			v[n] = aux % 2;
+			aux = aux / 2;
 
-			outputSignals[0]->bufferPut(s_out);
-			aux = aux % 2; 
 		}
 
-	}
+		int S = (int)size(v);
 
+		for (int l = 0; l < S; l++) {
+
+			s_out = v[(S - 1) - l];
+			outputSignals[0]->bufferPut(s_out);
+
+		}
+
+
+	}
 	return true;
 }

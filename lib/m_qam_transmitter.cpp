@@ -65,7 +65,7 @@ void MQamTransmitter::set(int opt) {
 		setNumberOfSamplesPerSymbol(16); //antes 32
 		setRollOffFactor(0.3);
 		setIqAmplitudes({ { 1.0, 1.0 },{ -1.0, 1.0 },{ -1.0, -1.0 },{ 1.0, -1.0 } });
-		setOutputOpticalPower_dBm(-20); //antes 0
+		setOutputOpticalPower_dBm(0); 
 		setSaveInternalSignals(true);
 	}
 

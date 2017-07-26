@@ -1,0 +1,15 @@
+real=-1
+imag=1
+q=0
+real=1
+imag=1
+q=1
+real=1
+imag=1
+q=2
+real=1
+imag=1
+q=3
+real=1
+imag=1
+q=4

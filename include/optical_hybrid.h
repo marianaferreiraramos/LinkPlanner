@@ -16,7 +16,7 @@ class OpticalHybrid : public Block {
 	double outputOpticalWavelength{ 1550e-9 };
 	double outputOpticalFrequency{ SPEED_OF_LIGHT / outputOpticalWavelength };
 	//double samplingPeriod{ 0.0 };
-	double powerFactor{ 0.5 }; //factor by which each output signal must be multiplied to conserve power
+	double powerFactor{ sqrt(0.5) }; //factor by which each output signal must be multiplied to conserve optical power
 
 public:
 

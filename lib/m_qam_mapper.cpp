@@ -49,6 +49,8 @@ void MQamMapper::initialize(void){
 	outputSignals[1]->samplesPerSymbol = 1;
 	outputSignals[1]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
 
+	myfile1.open("debug1.txt");
+
 	//setM(m);
 }
 
@@ -67,6 +69,7 @@ bool MQamMapper::runBlock(void) {
 	int binaryValue;
 	int nBinaryValues = (int)log2(m);
 	for (int i = 0; i < length; i++) {
+
 		inputSignals[0]->bufferGet(&binaryValue);
 		auxSignalNumber = auxSignalNumber + (int) pow(2, nBinaryValues - 1 - auxBinaryValue) * binaryValue;
 		auxBinaryValue++;
@@ -75,12 +78,23 @@ bool MQamMapper::runBlock(void) {
 			t_real auxQ = iqAmplitudes[auxSignalNumber].imag();
 			outputSignals[0]->bufferPut((t_real)auxI);
 			outputSignals[1]->bufferPut((t_real)auxQ);
+
+			myfile1 << "real=" << auxI << "\n";
+			myfile1 << "imag=" << auxQ << "\n";
+			myfile1 << "q=" << q << "\n";
+
 			auxBinaryValue = 0;
 			auxSignalNumber = 0;
+
+			q += 1;
 		}
+
+		
 	}
 
 	return true;
+
+	myfile1.close();
 }
 
 void MQamMapper::setIqAmplitudes(vector<t_iqValues> iqAmplitudesValues){
@@ -96,5 +110,8 @@ void MQamMapper::setM(int mValue){
 	switch (m) {
 	case 4:
 		iqAmplitudes = { { 1.0, 1.0 }, { -1.0, 1.0 }, { -1.0, -1.0 }, { 1.0, -1.0 } };
+
+	case 16:
+		iqAmplitudes = { { -3.0, -3.0 },{ -3.0, -1.0 },{ -3.0, 3.0 },{ -3.0, 1.0 },{ -1.0, -3.0 },{ -1.0, -1.0 },{ -1.0, 3.0 },{ -1.0, 1.0 },{ 3.0, -3.0 },{ 3.0, -1.0 }, { 3.0, 3.0 },{ 3.0, 1.0 },{ 1.0, -3.0 },{ 1.0, -1.0 },{ 1.0, 3.0 },{ 1.0, 1.0 } };
 	};
-};
+}; 

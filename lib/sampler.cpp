@@ -107,20 +107,24 @@ bool Sampler::runBlock(void) {
 
 		if (process == 0) return false;*/
 
+		t_real inClock;
+		t_real inSignal;
+
 		for (int k = 0; k < process; k++) {
 
-			t_real inClock;
-			t_real inSignal;
 			inputSignals[1]->bufferGet(&inClock);
 			inputSignals[0]->bufferGet(&inSignal);
 
 			if (inClock == 1.0) {
 
+				inSignal = inSignal; // (.5*sqrt(outputOpticalPower)); // to normalize the signal to 1
 				outputSignals[0]->bufferPut(inSignal);
 
 			}
 		}
 
 	}
+
+	return 0;
 
 };

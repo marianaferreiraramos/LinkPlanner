@@ -13,7 +13,7 @@ void BitErrorRate::initialize(void){
 }
 
 
-bool BitErrorRate::runBlock(void){
+bool BitErrorRate::runBlock(void) {
 
 	/* Computing z */ // This code converges in below 10 steps, exactness chosen in order to achieve this rapid convergence
 	if (firstPass)
@@ -24,7 +24,7 @@ bool BitErrorRate::runBlock(void){
 		t_real x3 = x2 - (erf(x2 / sqrt(2)) + 1 - alpha)*(x2 - x1) / (erf(x2 / sqrt(2)) - erf(x1 / sqrt(2)));
 		t_real exacteness = 1e-15;
 
-		while (abs(erf(x3 / sqrt(2)) + 1 - alpha)>exacteness)
+		while (abs(erf(x3 / sqrt(2)) + 1 - alpha) > exacteness)
 		{
 			x3 = x2 - (erf(x2 / sqrt(2)) + 1 - alpha)*(x2 - x1) / (erf(x2 / sqrt(2)) - erf(x1 / sqrt(2)));
 			x1 = x2;
@@ -54,7 +54,7 @@ bool BitErrorRate::runBlock(void){
 
 		/* Calculating BER and bounds */
 
-		t_real NumberOfBits =receivedBits;
+		t_real NumberOfBits = receivedBits;
 		t_real Coincidences = coincidences;
 
 		t_real BER;
@@ -139,6 +139,6 @@ bool BitErrorRate::runBlock(void){
 
 
 	}
-	return true;
+		return true;
 
-}
+	}

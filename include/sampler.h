@@ -20,6 +20,8 @@ class Sampler : public Block {
 
 public:
 
+	double outputOpticalPower{ 1e-3 };
+
 	void initialize(void);
 	bool runBlock(void);
 
@@ -29,6 +31,9 @@ public:
 	//void setSamplingRate(int Sampling) { sampling = Sampling; }
 	//void setDelay(int Delay) { delay = Delay; }
 	void setSamplesToSkip(t_integer sToSkip) { samplesToSkip = sToSkip; }
+	void setOutputOpticalPower(double outOpticalPower) { outputOpticalPower = outOpticalPower; }
+	void setOutputOpticalPower_dBm(double outOpticalPower_dBm) { outputOpticalPower = 1e-3*pow(10, outOpticalPower_dBm / 10); }
+
 
 };
 

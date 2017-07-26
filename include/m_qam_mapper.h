@@ -42,6 +42,10 @@ public:
 
 	void setIqAmplitudes(vector<t_iqValues> iqAmplitudesValues);
 
+	int q{ 0 };
+
+	ofstream myfile1;
+
 };
 
 #endif
