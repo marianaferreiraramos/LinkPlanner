@@ -72,6 +72,20 @@ Temporary Items
 *.mat
 *.sgn
 *.sgn
+<<<<<<< HEAD
 sdf/cv_transmission_system/signals/S2.sgn
 sdf/cv_transmission_system/signals/TI_AMP04.sgn
 sdf/bpsk_system/_bpsk_system.VC.db
+=======
+>>>>>>> develop
+doc/tex/chapter/case_studies.aux
+*.aux
+*.out
+*.aux
+*.aux
+*.out
+doc/tex/main_netxpto.pdf
+doc/tex/main_netxpto.synctex
+doc/tex/main_netxpto.toc
+*.obj
+visualizerXPTO/nRead.mat
