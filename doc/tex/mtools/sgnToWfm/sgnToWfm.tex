@@ -2,24 +2,96 @@
 
 \section{sgnToWfm}
 
-\subsection*{Input Parameters}
-
-This block takes no parameters.
 
 \subsection*{Functional Description}
 
-This block accepts two signals and outputs one signal built from a sum of the two inputs. The input and output signals must be of the same type.
+This Matlab function converts signals produced by the simulator (files with the extension .sgn) to waveforms  (files with the extension .wfm). This waveform files can be read, and later on, outputted by the Arbitrary Waveform Generator (AWG).
+However, the AWG has its limitations, therefore the original signal must have a sampling rate equal or bellow the maximum sampling rate specified by the AWG you are using.
 
-\subsection*{Input Signals}
+\subsection*{Inputs}
 
-\textbf{Number}: 2
+The function requires only one input, a string with the name of the signal file that will be converted. 
 
-\textbf{Type}: Real, Complex or Complex\_XY signal (ContinuousTimeContinuousAmplitude)
 
-\subsection*{Output Signals}
+\textbf{Type}: Real signal (ContinuousTimeContinuousAmplitudeReal)
 
-\textbf{Number}: 1
+\subsection*{Output}
 
-\textbf{Type}: Real, Complex or Complex\_XY signal (ContinuousTimeContinuousAmplitude)
+If specified correctly the function will return six variables in the Matlab workspace, as well as creating a waveform file in the current folder.
+Those variables are:
+
+\bigskip
+
+\textbf{data}: A vector with the waveform data.
+\bigskip
+
+\textbf{symbolPeriod}: Equal to the symbol period of the corresponding signal 
+\bigskip
+
+\textbf{samplingPeriod}: Sampling period of the signal.
+\bigskip
+
+\textbf{type}: A string with the name of the signal type. 
+\bigskip
+
+\textbf{numberOfSymbols}: Number of symbols retrieved from the signal.
+\bigskip
+
+\textbf{samplingRate}: This is equal to the sampling rate of the signal.
+\bigskip
+
+The samplingRate variable  should be noted as it will be important later on.
+
+\subsection*{Tutorial - Loading a signal to the AWG}
+
+\textbf{1. Using the function sgnToWfm}: 
+Start up Matlab and change your current folder to mtools and add the signals folder that you want to convert to the Matlab search path. Use the function accordingly, putting as the input parameter the signal file you want to convert.
+\bigskip
+
+\noindent
+\textbf{2. AWG sampling rate}: 
+After calling the function there should be waveform file in the mtools folder, as well as a variable called samplingRate in the Matlab workspace. Make sure this is equal or bellow the maximum sampling frequency of the AWG you are working on, or else the waveform in can not be equal to the original signal. If it is higher you  have to adjust the parameters in the simulation in order to decrease the sampling frequency of the signal(i.e. decreasing the bit period or reducing the samples per symbol).
+\bigskip
+
+\noindent
+\textbf{3. Loading the waveform file to the AWG}:
+Copy the waveform file to your pen drive and connect it to the AWG. With the software of the awg open, go to browse waveforms, and select the waveform file you created (Figure 7.1).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../mtools/sgnToWfm/figures/tutorial1}
+	\label{TUT_SelectingWFM}\caption{Selecting your waveform in the AWG}
+\end{figure}
+Now you should have the waveform displayed on the screen. Although it has the same shape,  the waveform might not match the signal timing wise due to an incorrect sampling rate  configured in the AWG. 
+In this example (Figure 7.2), the original signal has a sample rate of 8 GS/s and the AWG is configured to 1.25 GS/s. Therefore it must be changed to the correct value.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../mtools/sgnToWfm/figures/tutorial2}
+	\label{TUT_CompBad}\caption{Comparison between the waveform in the AWG and the original signal before configuring the sampling rate}
+\end{figure}
+\bigskip
+To do this go to the settings tab, clock settings, and change the sampling rate to be equal to the one of the original signal (8 GS/s).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../mtools/sgnToWfm/figures/tutorial3}
+	\label{TUT_ConfigSR}\caption{Configuring the right sampling rate}
+\end{figure}
+\bigskip
+
+Compare the waveform in the AWG with the original signal, they should be identical (Figure 7.4).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{../mtools/sgnToWfm/figures/tutorial4}
+	\label{TUT_CompGood}\caption{Comparison between the waveform in the AWG and the original signal after configuring the sampling rate}
+\end{figure}
+\bigskip
+
+\noindent
+\textbf{4. Generate the signal}: 
+Output the wave by enabling the channel you want and clicking on the play button.
+
 
 %\end{document} 

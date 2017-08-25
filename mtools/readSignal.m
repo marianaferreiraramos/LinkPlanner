@@ -34,7 +34,7 @@ t_binaryr = 'int';
 % 
 % %% Get global variable "t_real"
 %t_realr = getGlobalt_real;
-t_realr = 'double'
+t_realr = 'double';
 % 
 % %% Get global variable "t_complex"
 % t_complexr = getGlobalt_complex;

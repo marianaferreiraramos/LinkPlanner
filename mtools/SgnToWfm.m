@@ -1,4 +1,14 @@
-function [ data, symbolPeriod, samplingPeriod, type, numberOfSymbols,clockrate ] = sgnToWfm( fname_sgn,fname_wfm, nReadr )
+function [ data, symbolPeriod, samplingPeriod, type, numberOfSymbols,samplingRate ] = sgnToWfm( fname_sgn,fname_wfm, nReadr )
+% This function will build a WFM file given an input signal filename.
+%
+% [ data, symbolPeriod, samplingPeriod, type, numberOfSymbols,samplingRate
+% ] = sgnToWfm(fname_sgn);
+% Inputs
+% fname_sgn - Input filename of the signal you want to convert
+%
+% Outputs
+% A waveform file will be created in the current folder
+
 
 if nargin == 1
     fname_wfm = [strtok(fname_sgn,'.') '.wfm'];
@@ -7,16 +17,15 @@ end
 
 [ data, symbolPeriod, samplingPeriod, type, numberOfSymbols ] = readSignal( fname_sgn, nReadr );
 if (length(data)/4 ~= 0)
-    data=data(1:length(data)-rem(length(data),4))
+    data=data(1:length(data)-rem(length(data),4));
 end
 data=data/max(abs(data));
 data=data';
 sizeMark=size(data,1);
 marker = false(sizeMark, 2);  % Initializing markers
-SamplingRate=1/samplingPeriod;
-clockrate=SamplingRate;
+samplingRate=1/samplingPeriod;
 
-BuildTektronixAWG710xWFM(data,marker,clockrate,fname_wfm);
+BuildTektronixAWG710xWFM(data,marker,samplingRate,fname_wfm);
 
 
 % This function will build a WFM file for importing data into a Tektronix
