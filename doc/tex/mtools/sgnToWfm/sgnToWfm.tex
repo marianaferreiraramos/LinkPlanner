@@ -2,6 +2,16 @@
 
 \section{sgnToWfm}
 
+This function will build a WFM file given an input signal filename.
+
+%  [ data, symbolPeriod, samplingPeriod, type, numberOfSymbols,samplingRate  \] = sgnToWfm(fname_sgn);
+  
+%Inputs
+%  fname_sgn - Input filename of the signal you want to convert, signal type: \textbf{Type}: Real signal (ContinuousTimeContinuousAmplitudeReal)
+%
+% Outputs
+%  A waveform file will be created in the current folder
+
 
 \subsection*{Functional Description}
 
@@ -29,7 +39,7 @@ After making sure this specifications are respected you can create your waveform
 
 \subsection*{Inputs}
 
-The function requires only one input, a string with the name of the signal file that will be converted. 
+The function requires only one input, a string with the name of the signal file that will be converted.
 
 
 \textbf{Type}: Real signal (ContinuousTimeContinuousAmplitudeReal)
@@ -44,13 +54,13 @@ Those variables are:
 \textbf{data}: A vector with the waveform data.
 \bigskip
 
-\textbf{symbolPeriod}: Equal to the symbol period of the corresponding signal 
+\textbf{symbolPeriod}: Equal to the symbol period of the corresponding signal
 \bigskip
 
 \textbf{samplingPeriod}: Sampling period of the signal.
 \bigskip
 
-\textbf{type}: A string with the name of the signal type. 
+\textbf{type}: A string with the name of the signal type.
 \bigskip
 
 \textbf{numberOfSymbols}: Number of symbols retrieved from the signal.
@@ -63,13 +73,13 @@ The samplingRate variable  should be noted as it will be important later on.
 
 \subsection*{Tutorial - Loading a signal to the AWG}
 
-\textbf{1. Using the function sgnToWfm}: 
+\textbf{1. Using the function sgnToWfm}:
 Start up Matlab and change your current folder to mtools and add the signals folder that you want to convert to the Matlab search path. Use the function accordingly, putting as the input parameter the signal file you want to convert.
 
 
 \noindent
 \bigskip
-\textbf{2. AWG sampling rate}: 
+\textbf{2. AWG sampling rate}:
 After calling the function there should be waveform file in the mtools folder, as well as a variable called samplingRate in the Matlab workspace. Make sure this is equal or bellow the maximum sampling frequency of the AWG (16 GS/s), or else the waveform can not be equal to the original signal. If it is higher you  have to adjust the parameters in the simulation in order to decrease the sampling frequency of the signal(i.e. decreasing the bit period or reducing the samples per symbol).
 \bigskip
 
@@ -83,7 +93,7 @@ Copy the waveform file to your pen drive and connect it to the AWG. With the sof
 	\label{TUT_SelectingWFM}\caption{Selecting your waveform in the AWG}
 \end{figure}
 
-Now you should have the waveform displayed on the screen. Although it has the same shape,  the waveform might not match the signal timing wise due to an incorrect sampling rate  configured in the AWG. 
+Now you should have the waveform displayed on the screen. Although it has the same shape,  the waveform might not match the signal timing wise due to an incorrect sampling rate  configured in the AWG.
 In this example (Figure 7.3), the original signal has a sample rate of 8 GS/s and the AWG is configured to 1.25 GS/s. Therefore it must be changed to the correct value.
 
 \begin{figure}[h]
@@ -111,7 +121,7 @@ Compare the waveform in the AWG with the original signal, they should be identic
 \bigskip
 
 \noindent
-\textbf{4. Generate the signal}: 
+\textbf{4. Generate the signal}:
 Output the wave by enabling the channel you want and clicking on the play button.
 
 
