@@ -8,9 +8,18 @@
 *.ilk
 *.pdb
 *.tlog
-
 *.VC.opendb
 *.VC.db
+*.idb
+*.lastbuildstate
+*.user
+
+######################
+# Winedt
+######################
+*.synctex
+*.log
+*.ilg
 
 ######################
 # Matlab
@@ -65,7 +74,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-*.obj
 *.obj
 *.exe
 *.mat
