@@ -1,4 +1,10 @@
 ######################
+# PDF files
+######################
+
+doc/tex/main_netxpto.pdf
+
+######################
 # Visual C++
 ######################
 *.obj
@@ -80,3 +86,6 @@ Temporary Items
 *.mat
 *.sgn
 *.sgn
+*.aux
+*.out
+*.aux
