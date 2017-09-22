@@ -3,12 +3,12 @@
 
 # include "netxpto.h"
 
+# include "sampler.h"
 # include "local_oscillator.h"
 # include "balanced_beam_splitter.h"
 # include "photodiode.h"
 # include "ti_amplifier.h"
 # include "electrical_filter.h"
-# include "sampler.h"
 # include "bit_decider.h"
 
 
@@ -54,15 +54,6 @@ public:
 
 	/* Set Methods */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-//<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 526292907dd2ff7d6ea618152856721b6b80e5dd
-=======
-//<<<<<<< HEAD
->>>>>>> Romil
 	void setResponsivity(double Responsivity) { B1.setResponsivity(Responsivity); };
 	double const getResponsivity(void) { B1.getResponsivity(); }
 	void useShotNoise(bool uShotNoise){ B1.useNoise(uShotNoise); };
@@ -84,44 +75,6 @@ public:
     int const getImpulseResponseLength(void) { return B2.getImpulseResponseLength();};
     
 	void usePassiveFilterMode(bool pFilterMode){ B2.usePassiveFilterMode(pFilterMode); }
-<<<<<<< HEAD
-<<<<<<< HEAD
-/*=======
-=======
-=======
->>>>>>> 526292907dd2ff7d6ea618152856721b6b80e5dd
-=======
-/*=======
->>>>>>> Romil
-	void setLocalOscillatorSamplingPeriod(double sPeriod) { B1.setSamplingPeriod(sPeriod); };
-	//void setLocalOscillatorSymbolPeriod(double sPeriod) { B1.setSymbolPeriod(sPeriod); }
-	void setLocalOscillatorOpticalPower(double opticalPower) { B1.setOpticalPower(opticalPower); };
-	void setLocalOscillatorOpticalPower_dBm(double opticalPower_dBm) { B1.setOpticalPower_dBm(opticalPower_dBm); };
-	void setLocalOscillatorPhase(double lOscillatorPhase) { B1.setPhase(lOscillatorPhase); };
-	void setLocalOscillatorOpticalWavelength(double lOscillatorWavelength) { B1.setWavelength(lOscillatorWavelength); };
-
-	void setSamplingPeriod(double sPeriod) { B1.setSamplingPeriod(sPeriod); };
-
-	void setTransferMatrix(array<t_complex, 4> TransferMatrix) { B2.matrix = TransferMatrix; };
-
-	void  setResponsivity(t_real Responsivity) { B3.responsivity = Responsivity; };
-
-	void setAmplification(t_real Amplification) { B4.amplification = Amplification; };
-	void setNoiseAmplitude(t_real NoiseAmplitude) { B4.noiseamp = NoiseAmplitude; };
-
-	void setSamplesToSkip(int sToSkip) { B5.setSamplesToSkip(sToSkip); };
-
-	void setDecionLevel(int dLevel) { B6.setDecisionLevel(dLevel); };
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> AnaLuisa*/
-=======
->>>>>>> AnaLuisa
->>>>>>> 526292907dd2ff7d6ea618152856721b6b80e5dd
-=======
->>>>>>> AnaLuisa*/
->>>>>>> Romil
-
 };
 
 #endif

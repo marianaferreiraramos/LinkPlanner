@@ -14,36 +14,8 @@ void BalancedBeamSplitter::initialize(void) {
 	outputSignals[0]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
 	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
 	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
-<<<<<<< HEAD
-<<<<<<< HEAD
 	outputSignals[0]->setCentralWavelength(inputSignals[0]->getCentralWavelength());
 	outputSignals[0]->setCentralFrequency(inputSignals[0]->getCentralFrequency());
-=======
-
-	outputSignals[0]->centralWavelength = outputOpticalWavelength;
-	outputSignals[0]->centralFrequency = outputOpticalFrequency;
->>>>>>> 526292907dd2ff7d6ea618152856721b6b80e5dd
-=======
-	outputSignals[0]->setCentralWavelength(inputSignals[0]->getCentralWavelength());
-	outputSignals[0]->setCentralFrequency(inputSignals[0]->getCentralFrequency());
->>>>>>> Romil
-
-	outputSignals[1]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
-	outputSignals[1]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
-	outputSignals[1]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
-<<<<<<< HEAD
-<<<<<<< HEAD
-	outputSignals[1]->setCentralWavelength(inputSignals[0]->getCentralWavelength());
-	outputSignals[1]->setCentralFrequency(inputSignals[0]->getCentralFrequency());
-=======
-
-	outputSignals[1]->centralWavelength = outputOpticalWavelength;
-	outputSignals[1]->centralFrequency = outputOpticalFrequency;
->>>>>>> 526292907dd2ff7d6ea618152856721b6b80e5dd
-=======
-	outputSignals[1]->setCentralWavelength(inputSignals[0]->getCentralWavelength());
-	outputSignals[1]->setCentralFrequency(inputSignals[0]->getCentralFrequency());
->>>>>>> Romil
 
 }
 

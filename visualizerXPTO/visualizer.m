@@ -9,15 +9,8 @@ function [ ] = visualizer( ~ )
 %   IT, Aveiro.
 
 %% Clear command window
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 warning('off'); 
-=======
-warning('off');
->>>>>>> 526292907dd2ff7d6ea618152856721b6b80e5dd
-=======
-warning('off'); 
->>>>>>> Romil
 clc;
 
 s1 = [ pwd '\set'];

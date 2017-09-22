@@ -568,7 +568,7 @@ bool FD_Filter::runBlock(void) {
 	for (int k = 0; k < process1; k++) {
 		t_real val;
 		(inputSignals[0])->bufferGet(&val);
-		inputBufferTimeDomain[k] = val;
+		inputBufferTimeDomain[inputBufferPointer] = val;
 		inputBufferPointer++;
 	}
 	//overlapSaveZPRealIn();
@@ -587,7 +587,7 @@ bool FD_Filter::runBlock(void) {
 	if (process2 > 0) alive = true;
 	//int process2 = outputBufferTimeDomain.size();
 	for (int k = 0; k < process2; k++) {
-		t_real val = outputBufferTimeDomain[k];
+		t_real val = outputBufferTimeDomain[outputBufferPointer];
 		(outputSignals[0])->bufferPut(&val);
 		outputBufferPointer++;
 	}

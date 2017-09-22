@@ -1,5 +1,12 @@
+2017-09-21
+TO BE DONE
+ - Diagrama de bloco com o sistema RoF a simular, incluir no manual do netxpto - RoF System
+ - Diagrama de bloco para QPSK transmiter no dominio da frequencia / ANP, vai tentar corrigir os erros do código
+ - enviar pdf do artigo compensação não linear no dominio do tempo para o e-mail para discutirmos
+ 
+
 2017-09-11
-Paten revision (DONE)
+Patent revision (DONE)
 
 TO BE DONE
 - finalize frequency domain filter implementation

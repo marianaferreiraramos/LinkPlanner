@@ -26,27 +26,8 @@
     <ClCompile Include="bpsk_system_sdf.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\add.h" />
-    <ClInclude Include="..\..\include\balanced_beam_splitter.h" />
-    <ClInclude Include="..\..\include\binary_source.h" />
-    <ClInclude Include="..\..\include\bit_decider.h" />
-    <ClInclude Include="..\..\include\bit_error_rate.h" />
-    <ClInclude Include="..\..\include\discarder.h" />
-    <ClInclude Include="..\..\include\discrete_to_continuous_time.h" />
-    <ClInclude Include="..\..\include\electrical_filter.h" />
-    <ClInclude Include="..\..\include\ideal_amplifier.h" />
-    <ClInclude Include="..\..\include\iq_modulator.h" />
     <ClInclude Include="..\..\include\i_homodyne_receiver.h" />
     <ClInclude Include="..\..\include\local_oscillator.h" />
-    <ClInclude Include="..\..\include\m_qam_mapper.h" />
-    <ClInclude Include="..\..\include\m_qam_transmitter.h" />
-    <ClInclude Include="..\..\include\netxpto.h" />
-    <ClInclude Include="..\..\include\photodiode.h" />
-    <ClInclude Include="..\..\include\pulse_shaper.h" />
     <ClInclude Include="..\..\include\sampler.h" />
-    <ClInclude Include="..\..\include\sink.h" />
-    <ClInclude Include="..\..\include\super_block_interface.h" />
-    <ClInclude Include="..\..\include\ti_amplifier.h" />
-    <ClInclude Include="..\..\include\white_noise.h" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,8 @@
+2017-09-22
+TO BE DONE
+- write the protocol with detail
+
+
 2017-09-18
 TO BE DONE
 - write the plan of the work
