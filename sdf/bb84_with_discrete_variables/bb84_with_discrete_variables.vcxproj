@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>..\..\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Users\marianaferreiraramos\Documents\LinkPlanner.Mariana_TQ\sdf\bb84_with_discrete_variables</IncludePath>
+    <IncludePath>..\..\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);..\..\sdf\bb84_with_discrete_variables</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>

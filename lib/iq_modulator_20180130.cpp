@@ -63,6 +63,7 @@ bool IqModulator::runBlock(void) {
 
 	if (numberOfInputSignals == 3) {
 
+		
 		int readyI = inputSignals[0]->ready();
 		int readyQ = inputSignals[1]->ready();
 		int readyOpticalSignal = inputSignals[2]->ready();
@@ -76,14 +77,15 @@ bool IqModulator::runBlock(void) {
 
 		if (process == 0) return false;
 
+		t_complex opticalIn;
+
 		for (int i = 0; i < process; i++) {
 
-			t_complex opticalIn;
-			inputSignals[1]->bufferGet(&opticalIn);
+			inputSignals[2]->bufferGet(&opticalIn);
 
 			t_real re, im;
-			inputSignals[1]->bufferGet(&re);
-			inputSignals[2]->bufferGet(&im);
+			inputSignals[0]->bufferGet(&re);
+			inputSignals[1]->bufferGet(&im);
 
 			t_complex valueX(re, im);
 			valueX = opticalIn*valueX;

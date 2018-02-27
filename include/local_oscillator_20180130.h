@@ -15,7 +15,7 @@ class LocalOscillator : public Block {
 
 	/* Input Parameters */
 
-	double opticalPower{ 1e-3 };
+	double opticalPower{ 1 };
 	double outputOpticalWavelength{ 1550e-9 };
 	double outputOpticalFrequency{ SPEED_OF_LIGHT / outputOpticalWavelength };
 	double phase0{ 0 };

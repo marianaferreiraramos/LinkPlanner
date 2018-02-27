@@ -17,12 +17,14 @@ void MessageProcessorAlice::initialize(void) {
 
 bool MessageProcessorAlice::runBlock(void) {
 
-	bool alive{ false };
+	bool process{ false }, alive{ false };
 
-
-		alive = processInMessages();
-		alive = alive || processStoredMessages();
-
+	do {
+		process = processStoredMessages();
+		alive = alive || process;
+		process = processInMessages();
+		alive = alive || process;
+	} while (process);
 
 	return alive;
 }
@@ -41,31 +43,31 @@ bool MessageProcessorAlice::processStoredMessages() {
 		int process{ 0 };
 		switch (mType) {
 
-		case BasisReconciliation:
+			case BasisReconciliation:
 
-			int ready = min(inputSignals[0]->ready(), mDataLength);
+				int ready = min(inputSignals[0]->ready(), mDataLength);
 			//				ready = min(ready, outputSignals[0]->space());
-			process = min(ready, outputSignals[0]->space());
+				process = min(ready, outputSignals[0]->space());
 
-			if (process <= 0) return alive;
+				if (process <= 0) return alive;
 
-			for (auto k = 0; k < process; k++) {
+				for (auto k = 0; k < process; k++) {
 
-				alive = true;
+					alive = true;
 
-				t_binary inBit;
-				inputSignals[0]->bufferGet(&inBit);
+					t_binary inBit;
+					inputSignals[0]->bufferGet(&inBit);
 
-				if (inBit == mData[k]) {
-					outputSignals[0]->bufferPut((t_binary)1);
-					mDataOut.append("1");
+					if (inBit == mData[k]) {
+						outputSignals[0]->bufferPut((t_binary)1);
+						mDataOut.append("1");
+					}
+					else {
+						outputSignals[0]->bufferPut((t_binary)0);
+						mDataOut.append("0");
+					}
 				}
-				else {
-					outputSignals[0]->bufferPut((t_binary)0);
-					mDataOut.append("0");
-				}
-			}
-			break;
+				break;
 		}
 
 		int dLength = mDataLength - process;
@@ -105,8 +107,7 @@ bool MessageProcessorAlice::processInMessages() {
 	bool alive{ false };
 
 	int ready = inputSignals[1]->ready();
-	if (ready <= 0);
-	else {
+	if (ready > 0) {
 		if (numberOfStoredMessages < maxNumberOfStoredMessages) {
 			t_message msgIn;
 			inputSignals[1]->bufferGet(&msgIn);

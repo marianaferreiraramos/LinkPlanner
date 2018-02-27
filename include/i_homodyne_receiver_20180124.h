@@ -6,7 +6,7 @@
 # include "photodiode_old_20180118.h"
 # include "ideal_amplifier_20180118.h"
 # include "white_noise_20180118.h"
-# include "add_20180118.h"
+# include "add_20171116.h"
 
 // Balanced Homodyne Receiver superblock
 class I_HomodyneReceiver : public SuperBlock {

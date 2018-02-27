@@ -63,7 +63,6 @@ bool Mixer::runBlock(void)
 #include <complex>
 #include <fstream>
 
-#include "netxpto.h"
 #include "mixer.h"
 
 

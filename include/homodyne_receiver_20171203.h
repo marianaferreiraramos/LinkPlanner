@@ -3,18 +3,16 @@
 
 # include "netxpto_20180118.h"
 
-# include "optical_hybrid.h"
-# include "photodiode_old.h"
-# include "subtractor.h"
-# include "ideal_amplifier.h"
-# include "decoder.h"
-# include "local_oscillator.h"
-# include "sampler.h"
-# include "super_block_interface.h"
-# include "pulse_shaper.h"
-# include "clock.h"
-# include "white_noise.h"
-# include "add.h"
+# include "optical_hybrid_20180118.h"
+# include "photodiode_old_20180118.h"
+# include "ideal_amplifier_20180118.h"
+# include "decoder_20180118.h"
+# include "local_oscillator_20180118.h"
+# include "sampler_20171119.h"
+# include "super_block_interface_20180118.h"
+# include "pulse_shaper_20180118.h"
+# include "white_noise_20180118.h"
+# include "add_20171116.h"
 
 
 // this is a test block for the purpose of beta testing new code
@@ -92,9 +90,9 @@ class HomodyneReceiver : public SuperBlock {
 
 	Add B10;
 
-	PulseShaper B11;
+//	PulseShaper B11;
 
-	PulseShaper B12;
+//	PulseShaper B12;
 
 	//Clock B13A;
 
@@ -144,9 +142,9 @@ public:
 	void setAmplification(t_real Amplification) { B5.setGain(Amplification); B6.setGain(Amplification); };
 	void setNoiseAmplitude(t_real NoiseAmplitude) { B7.setNoiseSpectralDensity(NoiseAmplitude); B8.setNoiseSpectralDensity(NoiseAmplitude);};
 
-	void setImpulseResponseTimeLength(int impResponseTimeLength) { B11.setImpulseResponseTimeLength(impResponseTimeLength); B12.setImpulseResponseTimeLength(impResponseTimeLength); };
-	void setFilterType(PulseShaperFilter fType) { B11.setFilterType(fType); B12.setFilterType(fType); };
-	void setRollOffFactor(double rOffFactor) { B11.setRollOffFactor(rOffFactor); B12.setRollOffFactor(rOffFactor); };
+//	void setImpulseResponseTimeLength(int impResponseTimeLength) { B11.setImpulseResponseTimeLength(impResponseTimeLength); B12.setImpulseResponseTimeLength(impResponseTimeLength); };
+//	void setFilterType(PulseShaperFilter fType) { B11.setFilterType(fType); B12.setFilterType(fType); };
+//	void setRollOffFactor(double rOffFactor) { B11.setRollOffFactor(rOffFactor); B12.setRollOffFactor(rOffFactor); };
 
 	//void setClockPeriod(double per) { B13A.setClockPeriod(per); B13B.setClockPeriod(per); };
 

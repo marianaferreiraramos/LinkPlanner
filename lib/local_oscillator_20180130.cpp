@@ -26,26 +26,30 @@ bool LocalOscillator::runBlock(void) {
 
 	if (process == 0) return false;
 
-	t_real phNoiseVar, phNoise, randnPhNoiseGen, intNoise, intVar;
+	t_real phNoiseVar, phNoise, intNoise, intVar;
 	double cm_phNoise (0.0);
 	t_complex out(0.0, 0.0);
 	double samplingPeriod = outputSignals[0]->getSamplingPeriod();
 	const double PI = 3.141592653589793;
-	
-	normal_distribution<double> dist_phaseNoise(0.0, 1.0);
-	normal_distribution<double> dist_RIN(0.0, 1.0);
+	const complex<double> I(0, 1);
+
+	normal_distribution<double> dist_phaseNoise;
+	normal_distribution<double> dist_RIN;
 	
 	phNoiseVar = 2 * PI * laserLW * samplingPeriod;
 	intVar = (1 / samplingPeriod) * laserRIN * pow(opticalPower, 2);
 
 	for (int i = 0; i < process; i++) {
-		randnPhNoiseGen = dist_phaseNoise(generatorPhaseNoise);
-		phNoise = sqrt(phNoiseVar)*randnPhNoiseGen;
-		cm_phNoise = cm_phNoise + phNoise;
 
-		t_real intNoise = sqrt(intVar)*dist_RIN(generatorRIN);
+		// Laser phase noise
+		phNoise = sqrt(phNoiseVar)*dist_phaseNoise(generatorPhaseNoise); 
+		cm_phNoise += phNoise;
 
-		out = sqrt(opticalPower + intNoise)*exp(i*(cm_phNoise + phase0));
+		// Laser intensity noise
+	    intNoise = sqrt(intVar)*dist_RIN(generatorRIN);
+
+		// Laser transmitted optical field
+		out = sqrt(opticalPower + intNoise)*exp(I*(cm_phNoise + phase0));
 
 		outputSignals[0]->bufferPut((t_complex)out);
 	}

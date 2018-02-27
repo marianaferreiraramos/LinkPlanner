@@ -5,15 +5,17 @@ using namespace std;
 
 void Fork::initialize(void)
 {
-	outputSignals[0]->setSymbolPeriod( inputSignals[0]->symbolPeriod);
+	outputSignals[0]->setSymbolPeriod ( inputSignals[0]->symbolPeriod);
 	outputSignals[0]->setSamplingPeriod ( inputSignals[0]->samplingPeriod);
 	outputSignals[0]->setSamplesPerSymbol ( inputSignals[0]->samplesPerSymbol);
-	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
+	outputSignals[0]->setFirstValueToBeSaved ( inputSignals[0]->getFirstValueToBeSaved());
 
 	outputSignals[1]->setSymbolPeriod(inputSignals[0]->symbolPeriod);
 	outputSignals[1]->setSamplingPeriod(inputSignals[0]->samplingPeriod);
 	outputSignals[1]->setSamplesPerSymbol(inputSignals[0]->samplesPerSymbol);
 	outputSignals[1]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
+
+	
 }
 
 
