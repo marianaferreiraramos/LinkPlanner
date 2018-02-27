@@ -32,6 +32,9 @@ bool MessageProcessorAlice::runBlock(void) {
 bool MessageProcessorAlice::processStoredMessages() {
 
 	bool alive{ false };
+	int space = outputSignals[1]->space();
+
+	if (space <= 0) return alive;
 
 	for(auto n = 0; n < numberOfStoredMessages; n++) {
 
