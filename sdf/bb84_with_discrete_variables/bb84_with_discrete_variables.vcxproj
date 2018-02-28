@@ -168,6 +168,7 @@
     <ClCompile Include="..\..\lib\sink_20180118.cpp" />
     <ClCompile Include="..\..\lib\super_block_interface_20180118.cpp" />
     <ClCompile Include="bb84_with_discrete_variables_sdf.cpp" />
+    <ClCompile Include="bit_decision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\alice_qkd.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="..\..\include\sink_20180118.h" />
     <ClInclude Include="..\..\include\super_block_interface_20180118.h" />
     <ClInclude Include="bb84_with_discrete_variables_sdf.h" />
+    <ClInclude Include="bit_decision.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

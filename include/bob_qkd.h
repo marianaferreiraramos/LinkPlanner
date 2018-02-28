@@ -13,6 +13,7 @@
 #include "bobBB84_20180221.h"
 #include "demux_1_2_20180205.h"
 #include "message_processor_bob_20180221.h"
+#include "bit_decision.h"
 
 
 class BobQKD : public SuperBlock {
@@ -25,7 +26,6 @@ class BobQKD : public SuperBlock {
 	TimeContinuousAmplitudeDiscreteReal Bob_3{ "Bob_3.sgn" };
 
 	TimeContinuousAmplitudeDiscreteReal Bob_7{ "Bob_7.sgn" };
-	TimeContinuousAmplitudeDiscreteReal Bob_4{ "Bob_4.sgn" };
 	Binary Bob_5{ "Bob_5.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_10{ "Bob_10.sgn" };
 	Binary Bob_11{ "Bob_11.sgn" };
@@ -65,7 +65,7 @@ class BobQKD : public SuperBlock {
 
 	MessageProcessorBob BB7;
 
-	Demux_1_2 BB6;
+	BitDecision BB6;
 
 	Sink BB11;
 

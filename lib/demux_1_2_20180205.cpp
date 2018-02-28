@@ -29,15 +29,15 @@ bool Demux_1_2::runBlock(void) {
 
 	signal_value_type inSignalType1 = inputSignals[0]->getValueType();
 	signal_value_type inSignalType2 = inputSignals[1]->getValueType();
-	/*
+	
 	if((inSignalType1 != BinaryValue) || (inSignalType2 != BinaryValue)){ 
 		cout << "ERRO: demux_1_2.cpp - invalide signal type" << "\n"; 
 		return false;
 	}
-	*/
+	
 	if ((inSignalType1 == BinaryValue) && (inSignalType2 == BinaryValue)) {
-		int binValue;
-		int logicalValue;
+		t_binary binValue;
+		t_binary logicalValue;
 
 		for (int i = 0; i <= length; i++) {
 			inputSignals[0]->bufferGet(&binValue);

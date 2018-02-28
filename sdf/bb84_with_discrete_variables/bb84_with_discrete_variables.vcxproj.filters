@@ -84,6 +84,9 @@
     <ClCompile Include="..\..\lib\message_processor_bob_20180221.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bit_decision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\alice_qkd.h">
@@ -153,6 +156,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bb84_with_discrete_variables_sdf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bit_decision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
