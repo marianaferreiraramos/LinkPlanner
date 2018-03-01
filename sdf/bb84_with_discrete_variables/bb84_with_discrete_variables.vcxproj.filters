@@ -87,6 +87,9 @@
     <ClCompile Include="bit_decision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\lib\bit_error_rate_20171810.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\alice_qkd.h">
@@ -159,6 +162,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="bit_decision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bit_error_rate_20171810.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

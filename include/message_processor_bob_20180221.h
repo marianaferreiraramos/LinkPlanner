@@ -22,7 +22,7 @@ private:
 	/*Input Parameters*/
 	t_message_data_length messageDataLength{ 64 };
 	int maxNumberOfStoredMessages{ 1 };
-	int maxOfStoredBasis{ 65 };
+	int maxOfStoredBasis{ 64 };
 
 	/*State Variables*/
 	vector<t_message> storedMessages;

@@ -1,15 +1,15 @@
 #include "demux_1_2_20180205.h"
 
 void Demux_1_2::initialize(void) {
-	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
-	outputSignals[0]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
-	outputSignals[0]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
-	outputSignals[0]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+//	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[0]->setSamplingPeriod(symbolPeriod);
+	outputSignals[0]->setSamplesPerSymbol(1);
+	outputSignals[0]->setSymbolPeriod(symbolPeriod);
 
-	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
-	outputSignals[1]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
-	outputSignals[1]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
-	outputSignals[1]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+//	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[1]->setSamplingPeriod(symbolPeriod);
+	outputSignals[1]->setSamplesPerSymbol(1);
+	outputSignals[1]->setSymbolPeriod(symbolPeriod);
 }
 
 bool Demux_1_2::runBlock(void) {

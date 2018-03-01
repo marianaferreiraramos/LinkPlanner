@@ -148,6 +148,7 @@
     <ClCompile Include="..\..\lib\alice_qkd.cpp" />
     <ClCompile Include="..\..\lib\binary_mapper_20180205.cpp" />
     <ClCompile Include="..\..\lib\binary_source_20180118.cpp" />
+    <ClCompile Include="..\..\lib\bit_error_rate_20171810.cpp" />
     <ClCompile Include="..\..\lib\bobBB84_20180221.cpp" />
     <ClCompile Include="..\..\lib\bob_qkd.cpp" />
     <ClCompile Include="..\..\lib\clock_20171219.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="..\..\include\alice_qkd.h" />
     <ClInclude Include="..\..\include\binary_mapper_20180205.h" />
     <ClInclude Include="..\..\include\binary_source_20180118.h" />
+    <ClInclude Include="..\..\include\bit_error_rate_20171810.h" />
     <ClInclude Include="..\..\include\bobBB84_20180221.h" />
     <ClInclude Include="..\..\include\bob_qkd.h" />
     <ClInclude Include="..\..\include\clock_20171219.h" />

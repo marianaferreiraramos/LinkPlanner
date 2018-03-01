@@ -20,12 +20,35 @@ bool MessageProcessorAlice::runBlock(void) {
 	bool process{ false }, alive{ false };
 
 	do {
+		process = ProcessBasisToStore();
+		alive = alive || process;
 		process = processStoredMessages();
 		alive = alive || process;
 		process = processInMessages();
 		alive = alive || process;
 	} while (process);
 
+	return alive;
+}
+
+bool MessageProcessorAlice::ProcessBasisToStore() {
+	bool alive{ false };
+
+	int ready = inputSignals[0]->ready();
+
+	int space = maxOfStoredBasis - numberOfStoredBasis;
+
+	int process = min(ready, space);
+
+	if (process > 0) {
+		for (auto k = 0; k < process; k++) {
+			t_binary basisIn;
+			inputSignals[0]->bufferGet(&basisIn);
+			storedBasis.push_back((int)basisIn);
+			numberOfStoredBasis++;
+			alive = true;
+		}
+	}
 	return alive;
 }
 
@@ -36,9 +59,7 @@ bool MessageProcessorAlice::processStoredMessages() {
 	int space1 = outputSignals[1]->space();
 	int space = min(space0, space1);
 
-	int readyBits = inputSignals[0]->ready();
-
-	int process = min(space, readyBits);
+	int process = min(space, numberOfStoredBasis);
 
 	if (process <= 0) return alive;
 
@@ -48,25 +69,23 @@ bool MessageProcessorAlice::processStoredMessages() {
 		t_message_data_length mDataLength = getMessageDataLength(storedMessages[n]);
 		t_message_data mData = getMessageData(storedMessages[n], mDataLength);
 
+
 		string mDataOut{ "" };
 		int processMessage{ 0 };
 		switch (mType) {
 
 			case BasisReconciliation:
 
-				int ready = min(readyBits, (int)mData.size());
+				int ready = min(numberOfStoredBasis, (int)mData.size());
 				processMessage = min(ready,space0);
 
-				if (processMessage <= 0) return alive;
+				if (processMessage < 0) return alive;
 
 				for (auto k = 0; k < processMessage; k++) {
 
 					alive = true;
 
-					t_binary inBit;
-					inputSignals[0]->bufferGet(&inBit);
-
-					if (inBit == mData[k]) {
+					if (storedBasis[k] == mData[k]) {
 						outputSignals[0]->bufferPut((t_binary)1);
 						mDataOut.append(to_string((int)1));
 					}
@@ -75,6 +94,9 @@ bool MessageProcessorAlice::processStoredMessages() {
 						mDataOut.append(to_string((int)0));
 					}
 				}
+
+				storedBasis.erase(storedBasis.begin() + processMessage);
+				numberOfStoredBasis = numberOfStoredBasis - processMessage;
 				break;
 		}
 
@@ -95,7 +117,7 @@ bool MessageProcessorAlice::processStoredMessages() {
 
 		t_message messageOut;
 		messageOut.messageType = mType;
-		messageOut.messageDataLength = to_string((t_message_data_length)mDataOut.size());
+		messageOut.messageDataLength = to_string((int)mDataOut.size());
 		messageOut.messageData = mDataOut;
 
 		if (mDataOut.size() != 0)

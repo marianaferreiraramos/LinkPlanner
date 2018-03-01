@@ -4,7 +4,7 @@ void MessageProcessorBob::initialize(void) {
 
 	outputSignals[0]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
 	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
-//	outputSignals[0]->setSamplesPerSymbol(inputSignals[0]->getSamplesPerSymbol());
+	outputSignals[0]->setSamplesPerSymbol(1);
 //	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
 
 	outputSignals[1]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
@@ -21,6 +21,7 @@ bool MessageProcessorBob::runBlock(void) {
 		alive = alive || ProcessMessageToSend();
 		alive = alive || ProcessStoredMessage();
 		alive = alive || ProcessReceivedMessage();
+		alive = alive || ProcessStoredMessage();
 		
 	} while (alive);
 	return alive;
@@ -30,9 +31,12 @@ bool MessageProcessorBob::ProcessBasisToStore() {
 	bool alive{ false };
 	int ready = inputSignals[0]->ready();
 
-	if (ready <= 0);
-	else {
-		if (numberOfStoredBasis < maxOfStoredBasis) {
+	int space = maxOfStoredBasis - numberOfStoredBasis;
+
+	int process = min(ready, space);
+
+	if (process > 0){
+		for (auto k = 0; k < process; k++) {
 			t_real basisIn;
 			inputSignals[0]->bufferGet(&basisIn);
 			storedBasis.push_back((int)basisIn);
@@ -40,7 +44,6 @@ bool MessageProcessorBob::ProcessBasisToStore() {
 			alive = true;
 		}
 	}
-
 	return alive;
 }
 
@@ -49,29 +52,27 @@ bool MessageProcessorBob::ProcessMessageToSend() {
 
 	int space = outputSignals[1]->space();
 
-	if (space <= 0) return alive;
+	if (space > 0) {
+		if (numberOfStoredBasis >= messageDataLength) {
 
-	if (numberOfStoredBasis >= messageDataLength) {
+			string mDataToSend{ "" };
+			for (auto k = 0; k < messageDataLength; k++) {
+				mDataToSend.append(to_string(storedBasis[k]));
+			}
 
-		string mDataToSend{ "" };
-		for (auto k = 0; k < messageDataLength; k++) {
-			mDataToSend.append(to_string(storedBasis[k]));
-			//outputSignals[0]->bufferPut((t_real)storedBasis[k]);
+			storedBasis.erase(storedBasis.begin(), storedBasis.begin() + messageDataLength);
+			numberOfStoredBasis = (int)storedBasis.size();
+
+			t_message messageToSend;
+
+			messageToSend.messageData = mDataToSend;
+			messageToSend.messageDataLength = to_string((t_message_data_length)messageDataLength);
+			messageToSend.messageType = BasisReconciliation;
+
+			outputSignals[1]->bufferPut((t_message)messageToSend);
+			alive = true;
 		}
-
-		storedBasis.erase(storedBasis.begin(),storedBasis.begin() + messageDataLength);
-		numberOfStoredBasis = (int)storedBasis.size();
-
-		t_message messageToSend;
-		
-		messageToSend.messageData = mDataToSend;
-		messageToSend.messageDataLength =to_string((t_message_data_length)messageDataLength);
-		messageToSend.messageType = BasisReconciliation;
-
-		outputSignals[1]->bufferPut((t_message)messageToSend);
-		alive = true;
 	}
-
 	return alive;
 }
 

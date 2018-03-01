@@ -7,6 +7,7 @@ class Demux_1_2 : public Block {
 
 public:
 	/*input parameters*/
+	double symbolPeriod{ 1 };
 
 	/*Methods*/
 	Demux_1_2() {};
@@ -16,6 +17,8 @@ public:
 
 	bool runBlock(void);
 
+	void setSymbolPeriod(double sPeriod) { symbolPeriod = sPeriod; };
+	double getSymbolPeriod() { return symbolPeriod; };
 
 };
 

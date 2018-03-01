@@ -1,11 +1,15 @@
 #include "bit_decision.h"
 
 void BitDecision::initialize(void) {
-	outputSignals[0]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
-	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
+	outputSignals[0]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+	outputSignals[0]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
+//	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[0]->setSamplesPerSymbol(1);
 
-	outputSignals[1]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
-	outputSignals[1]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
+	outputSignals[1]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+	outputSignals[1]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
+//	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[1]->setSamplesPerSymbol(1);
 }
 
 bool BitDecision::runBlock() {
@@ -31,11 +35,11 @@ bool BitDecision::runBlock() {
 			inputSignals[1]->bufferGet(&logicValue);
 
 			if (logicValue == 1) {
-				outputSignals[0]->bufferPut(bitIn);
+				outputSignals[0]->bufferPut((t_binary)bitIn);
 			//	cout << "1: " << bitIn << "\n";
 			}
 			else {
-				outputSignals[1]->bufferPut(bitIn);
+				outputSignals[1]->bufferPut((t_binary)bitIn);
 			//	cout << "0: " << bitIn << "\n";
 			}
 				
