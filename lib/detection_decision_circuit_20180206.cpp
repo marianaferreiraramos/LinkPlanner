@@ -7,9 +7,9 @@ void DetectionDecisionCircuit::initialize(void) {
 	outputSignals[0]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
 	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
 
-	outputSignals[1]->setSymbolPeriod(0.001);
-	outputSignals[1]->setSamplingPeriod(0.001);
-	outputSignals[1]->setSamplesPerSymbol(1);
+	outputSignals[1]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+	outputSignals[1]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
+	outputSignals[1]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
 	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
 	
 }
@@ -37,19 +37,19 @@ bool DetectionDecisionCircuit::runBlock(void) {
 
 		if ((value0 == 1.0) && (value1 == 0.0)) {
 			outputSignals[0]->bufferPut((t_real)0.0);
-			outputSignals[1]->bufferPut((t_binary)0);
+			outputSignals[1]->bufferPut((t_real)0);
 		}
 		else if ((value0 == 0.0) && (value1 == 1.0)) {
 			outputSignals[0]->bufferPut((t_real)1.0);
-			outputSignals[1]->bufferPut((t_binary)1);
+			outputSignals[1]->bufferPut((t_real)1);
 		}
 		else if ((value0 == 1.0) && (value1 == 1.0)) {
 			outputSignals[0]->bufferPut((t_real)-2.0);
-			outputSignals[1]->bufferPut((t_binary)2);
+			outputSignals[1]->bufferPut((t_real)2);
 		}
 		else {
 			outputSignals[0]->bufferPut((t_real)-1.0);
-			outputSignals[1]->bufferPut((t_binary)3);
+			outputSignals[1]->bufferPut((t_real)-1.0);
 		}
 			
 	}

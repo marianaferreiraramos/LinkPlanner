@@ -1,14 +1,14 @@
 #include "bit_decision.h"
 
 void BitDecision::initialize(void) {
-	outputSignals[0]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
-	outputSignals[0]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
-//	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[0]->setSymbolPeriod(0.001);
+	outputSignals[0]->setSamplingPeriod(0.001);
+	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
 	outputSignals[0]->setSamplesPerSymbol(1);
 
-	outputSignals[1]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
-	outputSignals[1]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
-//	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[1]->setSymbolPeriod(0.001);
+	outputSignals[1]->setSamplingPeriod(0.001);
+	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
 	outputSignals[1]->setSamplesPerSymbol(1);
 }
 
@@ -29,17 +29,31 @@ bool BitDecision::runBlock() {
 
 	if (process > 0) {
 		for (auto n = 0; n < process; n++) {
-			t_binary bitIn;
-			t_binary logicValue;
+			t_real bitIn;
+			t_real logicValue;
 			inputSignals[0]->bufferGet(&bitIn);
 			inputSignals[1]->bufferGet(&logicValue);
 
-			if (logicValue == 1) {
-				outputSignals[0]->bufferPut((t_binary)bitIn);
+			if (logicValue == 1.0) {
+				if(bitIn == 1.0)
+					outputSignals[0]->bufferPut((t_binary)1);
+				else if(bitIn == 0.0)
+					outputSignals[0]->bufferPut((t_binary)0);
+				else if(bitIn == -2.0)
+					outputSignals[0]->bufferPut((t_binary)2);
+				else if(bitIn == -1.0)
+					outputSignals[0]->bufferPut((t_binary)3);
 			//	cout << "1: " << bitIn << "\n";
 			}
 			else {
-				outputSignals[1]->bufferPut((t_binary)bitIn);
+				if (bitIn == 1.0)
+					outputSignals[1]->bufferPut((t_binary)1);
+				else if (bitIn == 0.0)
+					outputSignals[1]->bufferPut((t_binary)0);
+				else if (bitIn == -2.0)
+					outputSignals[1]->bufferPut((t_binary)2);
+				else if (bitIn == -1.0)
+					outputSignals[1]->bufferPut((t_binary)3);
 			//	cout << "0: " << bitIn << "\n";
 			}
 				

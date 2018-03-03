@@ -1,10 +1,10 @@
 #include "bobBB84_20180221.h"
 
 void bobBB84::initialize(void) {
-	outputSignals[0]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
-	outputSignals[0]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
-	outputSignals[0]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
-	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+	outputSignals[0]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
+	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
+	outputSignals[0]->setSamplesPerSymbol(inputSignals[0]->getSamplesPerSymbol());
+	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
 }
 
 bool bobBB84::runBlock(void) {
