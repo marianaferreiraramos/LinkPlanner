@@ -11,16 +11,18 @@ BobQKD::BobQKD(vector<Signal*> &inputSignal, vector <Signal*> &outputSignal) : S
 
 	BB4.initializeBlock(vector <Signal*> {&Bob_3}, vector<Signal*>{&CLKB_out1, &CLKB_out2});
 
-	BB8.initializeBlock(vector<Signal*>{inputSignals[2]}, vector<Signal*>{&Bob_7, &Bob_11});
+	BB10.initializeBlock(vector<Signal*>{inputSignals[2]}, vector<Signal*>{&Bob_7, &Bob_11});
 
-	BBSink.initializeBlock(vector<Signal*>{&Bob_7}, vector<Signal*>{});
+	BB5.initializeBlock(vector<Signal*>{&Bob_7, inputSignals[3]}, vector<Signal*>{&Bob_10});
+
+	BBSink.initializeBlock(vector<Signal*>{&Bob_10}, vector<Signal*>{});
 	BBSink.setNumberOfSamples(500);
 	BBSink.setDisplayNumberOfSamples(true);
 	BBSink0.initializeBlock(vector<Signal*>{&Bob_11}, vector<Signal*>{});
 
 	BB9.initializeBlock(vector <Signal*> {&Bob_8, &CLKB_out1, &CLKB_out2}, vector<Signal*>{outputSignals[0], outputSignals[1], outputSignals[2]});
 
-	setModuleBlocks({ &BB0, &BB1, &BB2, &BB3, &BB4, &BB8, &BBSink, &BBSink0, &BB9 });
+	setModuleBlocks({ &BB0, &BB1, &BB2, &BB3, &BB4, &BB10, &BB5, &BBSink, &BBSink0, &BB9 });
 
 
 };

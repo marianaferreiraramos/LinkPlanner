@@ -24,7 +24,7 @@ class BobQKD : public SuperBlock {
 	TimeDiscreteAmplitudeDiscreteReal Bob_1{ "Bob_1.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_2{ "Bob_2.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_3{ "Bob_3.sgn" };
-	TimeContinuousAmplitudeContinuousReal Bob_12{ "Bob_12.sng" };
+	TimeContinuousAmplitudeContinuousReal Bob_12{ "Bob_12.sgn" };
 	TimeContinuousAmplitudeContinuousReal Bob_13{"Bob_13.sgn"};
 
 	TimeDiscreteAmplitudeDiscreteReal Bob_7{ "Bob_7.sgn" };
@@ -66,7 +66,7 @@ class BobQKD : public SuperBlock {
 
 	BitDecision BB6;
 
-	Fork BB8;
+	Fork BB10;
 	
 
 	Sink BBSink;
