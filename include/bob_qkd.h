@@ -7,7 +7,6 @@
 #include "pulse_shaper_20180111.h"
 #include "super_block_interface_20180118.h"
 #include "fork_20180112.h"
-#include "detection_decision_circuit_20180206.h"
 #include "sink.h"
 #include "clock_20171219.h"
 #include "fork.h"
@@ -25,14 +24,16 @@ class BobQKD : public SuperBlock {
 	TimeDiscreteAmplitudeDiscreteReal Bob_1{ "Bob_1.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_2{ "Bob_2.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_3{ "Bob_3.sgn" };
+	TimeContinuousAmplitudeContinuousReal Bob_12{ "Bob_12.sng" };
+	TimeContinuousAmplitudeContinuousReal Bob_13{"Bob_13.sgn"};
 
-	TimeContinuousAmplitudeDiscreteReal Bob_7{ "Bob_7.sgn" };
+	TimeDiscreteAmplitudeDiscreteReal Bob_7{ "Bob_7.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_4{ "Bob_4.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_5{ "Bob_5.sgn" };
 	Binary Bob_6{ "Bob_6.sgn" };
 	Binary Bob_9{ "Bob_9.sgn" };
 	TimeContinuousAmplitudeDiscreteReal Bob_10{ "Bob_10.sgn" };
-	TimeContinuousAmplitudeDiscreteReal Bob_11{ "Bob_11.sgn" };
+	TimeDiscreteAmplitudeDiscreteReal Bob_11{ "Bob_11.sgn" };
 
 	TimeContinuousAmplitudeDiscreteReal Bob_8{ "Bob_8.sgn" };
 
@@ -59,13 +60,13 @@ class BobQKD : public SuperBlock {
 
 	SuperBlockInterface BB9;
 
-	DetectionDecisionCircuit BB10;
-
 	bobBB84 BB5;
 
 	MessageProcessorBob BB7;
 
 	BitDecision BB6;
+
+	Fork BB8;
 	
 
 	Sink BBSink;

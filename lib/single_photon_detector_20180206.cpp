@@ -5,10 +5,10 @@ void SinglePhotonDetector::initialize(void) {
 	numberOfInputSignals = (int)inputSignals.size();
 	numberOfOutputSignals = (int)outputSignals.size();
 
-	outputSignals[0]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
-	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
-	outputSignals[0]->setSamplesPerSymbol(inputSignals[0]->getSamplesPerSymbol());
-	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
+	outputSignals[0]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+	outputSignals[0]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
+	outputSignals[0]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
+	outputSignals[0]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
 	
 }
 
@@ -85,11 +85,14 @@ bool SinglePhotonDetector::runBlock(void) {
 		case PhotonValueMPXY:
 			for (auto k = 0; k < process; k++) {
 			t_real clk;
-			if (numberOfOutputSignals > 1) 
+			if (numberOfInputSignals > 1) {
 				inputSignals[1]->bufferGet(&clk);
+			}
 			else 
 				clk = 1.0;
 			
+			if ((clk == 1.0) && firstTime)
+				firstTime = false;
 
 			t_photon_mp_xy inValueMP;
 			inputSignals[0]->bufferGet(&inValueMP);
@@ -98,12 +101,13 @@ bool SinglePhotonDetector::runBlock(void) {
 			t_complex xValue = inValue.x;
 			t_complex yValue = inValue.y;
 			bool write{ false };
+
 			switch (path) {
 			case 0:
-				if ((abs(xValue) >= 0.0) && (abs(xValue) <= 1.0) && (clk > 0.0)) {
+				if ((abs(xValue.real()) >= 0.0) && (abs(xValue.real()) <= 1.0)) {
 					double number = distribution(generator);
-					if (number < (pow(abs(xValue), 2) + probabilityDarkCount)) {
-						outputSignals[0]->bufferPut((t_real)1.0);
+					if ((number < (pow(abs(xValue), 2) + probabilityDarkCount))) {
+						outputSignals[0]->bufferPut((t_real)1.0*clk);
 						inValueMP.path[1].x = (t_complex) 0.0;
 						inValueMP.path[1].y = (t_complex) 0.0;
 						inValueMP.path[0].x = (t_complex) 1.0;
@@ -111,7 +115,7 @@ bool SinglePhotonDetector::runBlock(void) {
 						write = true;
 					}
 					else {
-						outputSignals[0]->bufferPut((t_real)0.0);
+						outputSignals[0]->bufferPut((t_real)0.0*clk);
 						inValueMP.path[1].x = (t_complex) 0.0;
 						inValueMP.path[1].y = (t_complex) 1.0;
 						inValueMP.path[0].x = (t_complex) 0.0;
@@ -119,22 +123,25 @@ bool SinglePhotonDetector::runBlock(void) {
 						write = true;
 					}
 				}
+				else
+					outputSignals[0]->bufferPut((t_real)0.0*clk);
 
 				break;
 
 			case 1:
-				if (clk > 0.0){
-					if (abs(yValue) == 1.0)
-						outputSignals[0]->bufferPut((t_real)1.0);
+				
+				if ((abs((inValueMP.path[1].y).real()) == 1.0))
+					outputSignals[0]->bufferPut((t_real)1.0*clk);
+				else {
+					double number = distribution(generator);
+					if ((number < probabilityDarkCount)) {
+						outputSignals[0]->bufferPut((t_real)1.0*clk);
+					}
 					else {
-						double number = distribution(generator);
-						if (number < probabilityDarkCount) {
-							outputSignals[0]->bufferPut((t_real)1.0);
-						}
-						else
-							outputSignals[0]->bufferPut((t_real)0.0);
+						outputSignals[0]->bufferPut((t_real)0.0*clk);
 					}
 				}
+				
 				break;
 
 			default:
@@ -143,7 +150,8 @@ bool SinglePhotonDetector::runBlock(void) {
 
 			}
 
-			if(write) inputSignals[0]->bufferPut((t_photon_mp_xy)inValueMP);
+			
+			inputSignals[0]->bufferPut((t_photon_mp_xy)inValueMP);
 			
 		}
 

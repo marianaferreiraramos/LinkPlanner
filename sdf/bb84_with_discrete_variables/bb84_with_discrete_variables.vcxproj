@@ -153,7 +153,7 @@
     <ClCompile Include="..\..\lib\bob_qkd.cpp" />
     <ClCompile Include="..\..\lib\clock_20171219.cpp" />
     <ClCompile Include="..\..\lib\demux_1_2_20180205.cpp" />
-    <ClCompile Include="..\..\lib\detection_decision_circuit_20180206.cpp" />
+    <ClCompile Include="..\..\lib\coincidence_detector_20180206.cpp" />
     <ClCompile Include="..\..\lib\discrete_to_continuous_time_20180118.cpp" />
     <ClCompile Include="..\..\lib\eve_qkd.cpp" />
     <ClCompile Include="..\..\lib\fork_20180112.cpp" />
@@ -164,7 +164,9 @@
     <ClCompile Include="..\..\lib\polarization_beam_splitter_20180109.cpp" />
     <ClCompile Include="..\..\lib\polarizer_20180113.cpp" />
     <ClCompile Include="..\..\lib\pulse_shaper_20180111.cpp" />
+    <ClCompile Include="..\..\lib\sampler_20171119.cpp" />
     <ClCompile Include="..\..\lib\single_photon_detector_20180206.cpp" />
+    <ClCompile Include="..\..\lib\single_photon_receiver_20180303.cpp" />
     <ClCompile Include="..\..\lib\single_photon_source_20171218.cpp" />
     <ClCompile Include="..\..\lib\sink_20180118.cpp" />
     <ClCompile Include="..\..\lib\super_block_interface_20180118.cpp" />
@@ -180,7 +182,7 @@
     <ClInclude Include="..\..\include\bob_qkd.h" />
     <ClInclude Include="..\..\include\clock_20171219.h" />
     <ClInclude Include="..\..\include\demux_1_2_20180205.h" />
-    <ClInclude Include="..\..\include\detection_decision_circuit_20180206.h" />
+    <ClInclude Include="..\..\include\coincidence_detector_20180206.h" />
     <ClInclude Include="..\..\include\discrete_to_continuous_time_20180118.h" />
     <ClInclude Include="..\..\include\eve_qkd.h" />
     <ClInclude Include="..\..\include\fork_20180112.h" />
@@ -191,7 +193,9 @@
     <ClInclude Include="..\..\include\polarization_beam_splitter_20180109.h" />
     <ClInclude Include="..\..\include\polarizer_20180113.h" />
     <ClInclude Include="..\..\include\pulse_shaper_20180111.h" />
+    <ClInclude Include="..\..\include\sampler_20171119.h" />
     <ClInclude Include="..\..\include\single_photon_detector_20180206.h" />
+    <ClInclude Include="..\..\include\single_photon_receiver_20180303.h" />
     <ClInclude Include="..\..\include\single_photon_source_20171218.h" />
     <ClInclude Include="..\..\include\sink_20180118.h" />
     <ClInclude Include="..\..\include\super_block_interface_20180118.h" />
