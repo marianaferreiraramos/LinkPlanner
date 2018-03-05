@@ -18,12 +18,14 @@ AliceQKD::AliceQKD(vector<Signal*> &inputSignal, vector <Signal*> &outputSignal)
 	BA11.setMode(DeterministicCyclic);
 	BA11.setBitStream("01");
 	BA6.initializeBlock(vector<Signal*>{inputSignals[2], &alice_8}, vector<Signal*>{&alice_6, &alice_7});
+	BA6.setSymbolPeriod(alice_8.getSymbolPeriod() * 2);
 	BA12.initializeBlock(vector<Signal*>{&alice_7}, vector<Signal*>{});
 	BA13.initializeBlock(vector<Signal*>{}, vector<Signal*>{&alice_11});
 	BA13.setMode(DeterministicCyclic);
 	BA13.setBitStream("10");
 	BA13.setBitPeriod(0.0005);
 	BA8.initializeBlock(vector<Signal*>{inputSignals[3], &alice_11}, vector<Signal*>{&alice_9, &alice_10});
+	BA8.setSymbolPeriod(alice_11.getSymbolPeriod() * 2);
 	BA14.initializeBlock(vector<Signal*>{&alice_10}, vector<Signal*>{});
 //	BA7.initializeBlock(vector<Signal*>{&alice_6, inputSignals[4]}, vector<Signal*>{&alice_5, &C_C_1});
 	//BA9.initializeBlock(vector<Signal*>{&alice_9, &alice_5}, vector<Signal*>{&alice_12, &alice_13});
