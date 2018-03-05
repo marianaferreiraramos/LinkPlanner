@@ -57,7 +57,7 @@ class AliceQKD : public SuperBlock {
 	Messages C_C_1{ "C_C_1.sgn" };
 	Messages C_C_1_out{ "C_C_1_out.sgn" };
 
-
+	Binary MI_Alice{ "MI_alice.sgn" };
 
 
 	// #####################################################################################################
@@ -131,7 +131,7 @@ public:
 
 	void setDisplayNumberOfSamples(bool opt) { BA4.setDisplayNumberOfSamples(opt); };
 
-	void setSymbolPeriodDemux(double sPeriod) { BA6.setSymbolPeriod(sPeriod); BA8.setSymbolPeriod(sPeriod); BA9.setSymbolPeriod(sPeriod); };
+	void setSymbolPeriodMIA(double sPeriod) { BA9.setSymbolPeriod(sPeriod); };
 
 };
 

@@ -96,6 +96,9 @@
     <ClCompile Include="..\..\lib\sampler_20171119.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mutual_information_20180305.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\alice_qkd.h">
@@ -177,6 +180,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\sampler_20171119.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mutual_information_20180305.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

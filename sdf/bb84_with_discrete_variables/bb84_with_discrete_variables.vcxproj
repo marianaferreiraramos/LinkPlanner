@@ -172,6 +172,7 @@
     <ClCompile Include="..\..\lib\super_block_interface_20180118.cpp" />
     <ClCompile Include="bb84_with_discrete_variables_sdf.cpp" />
     <ClCompile Include="bit_decision.cpp" />
+    <ClCompile Include="mutual_information_20180305.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\alice_qkd.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="..\..\include\super_block_interface_20180118.h" />
     <ClInclude Include="bb84_with_discrete_variables_sdf.h" />
     <ClInclude Include="bit_decision.h" />
+    <ClInclude Include="mutual_information_20180305.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -43,7 +43,7 @@ class BobQKD : public SuperBlock {
 	Messages C_C_2{ "C_C_2.sgn" };
 	Messages C_C_1{ "C_C_1.sgn" };
 
-
+	Binary Bob_6_out{ "Bob_6_out.sgn" };
 
 
 
