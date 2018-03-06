@@ -21,7 +21,7 @@ void Sampler::initialize(void){
 bool Sampler::runBlock(void) {
 
 	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSymbolPeriod());
-	numberOfInputSignals = inputSignals.size();
+	numberOfInputSignals = (int)inputSignals.size();
 
 	bool alive{ false };
 

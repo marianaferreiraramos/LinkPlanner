@@ -162,7 +162,7 @@ bool BinarySource::runBlock(void) {
 			}
 		}
 	}
-
+	
 	if (mode == Random){
 
 		std::random_device rd;
@@ -178,7 +178,7 @@ bool BinarySource::runBlock(void) {
 			numberOfBits--;
 		}
 	}
-
+	
 	if (mode == DeterministicCyclic){
 		std::vector<char> values(bitStream.begin(), bitStream.end());
 		int valuesSize = (int) values.size();

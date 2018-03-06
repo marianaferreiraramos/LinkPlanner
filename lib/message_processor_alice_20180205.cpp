@@ -5,12 +5,12 @@ void MessageProcessorAlice::initialize(void) {
 	outputSignals[0]->setSamplingPeriod(inputSignals[0]->getSamplingPeriod());
 	outputSignals[0]->setSymbolPeriod(inputSignals[0]->getSymbolPeriod());
 	outputSignals[0]->setSamplesPerSymbol(inputSignals[0]->getSamplesPerSymbol());
-	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
+//	outputSignals[0]->setFirstValueToBeSaved(inputSignals[0]->getFirstValueToBeSaved());
 
-	outputSignals[1]->setSamplingPeriod(inputSignals[1]->getSamplingPeriod());
-	outputSignals[1]->setSymbolPeriod(inputSignals[1]->getSymbolPeriod());
+	outputSignals[1]->setSamplingPeriod(0.001);
+	outputSignals[1]->setSymbolPeriod(0.001);
 	outputSignals[1]->setSamplesPerSymbol(inputSignals[1]->getSamplesPerSymbol());
-	outputSignals[1]->setFirstValueToBeSaved(inputSignals[1]->getFirstValueToBeSaved());
+
 }
 
 
@@ -20,6 +20,8 @@ bool MessageProcessorAlice::runBlock(void) {
 	bool process{ false }, alive{ false };
 
 	do {
+	//	process = ProcessBasisToStore();
+	//	alive = alive || process;
 		process = processStoredMessages();
 		alive = alive || process;
 		process = processInMessages();
@@ -29,9 +31,39 @@ bool MessageProcessorAlice::runBlock(void) {
 	return alive;
 }
 
+bool MessageProcessorAlice::ProcessBasisToStore() {
+	bool alive{ false };
+
+	int ready = inputSignals[0]->ready();
+
+	int space = maxOfStoredBasis - numberOfStoredBasis;
+
+	int process = min(ready, space);
+
+	if (process > 0) {
+		for (auto k = 0; k < process; k++) {
+			t_binary basisIn;
+			inputSignals[0]->bufferGet(&basisIn);
+			storedBasis.push_back((int)basisIn);
+			numberOfStoredBasis++;
+			alive = true;
+		}
+	}
+	return alive;
+}
+
 bool MessageProcessorAlice::processStoredMessages() {
 
 	bool alive{ false };
+	int ready = inputSignals[0]->ready();
+
+	int space0 = outputSignals[0]->space();
+	int space1 = outputSignals[1]->space();
+	int space = min(space0, space1);
+
+	int process = min(space, ready);
+
+	if (process <= 0) return alive;
 
 	for(auto n = 0; n < numberOfStoredMessages; n++) {
 
@@ -39,45 +71,43 @@ bool MessageProcessorAlice::processStoredMessages() {
 		t_message_data_length mDataLength = getMessageDataLength(storedMessages[n]);
 		t_message_data mData = getMessageData(storedMessages[n], mDataLength);
 
+
 		string mDataOut{ "" };
-		int process{ 0 };
+		int processMessage{ 0 };
 		switch (mType) {
 
 			case BasisReconciliation:
 
-				int ready = min(inputSignals[0]->ready(), mDataLength);
-			//				ready = min(ready, outputSignals[0]->space());
-				process = min(ready, outputSignals[0]->space());
+				int readyMessage = min(ready, (int)mData.size());
+				processMessage = min(readyMessage,space0);
 
-				if (process <= 0) return alive;
+				if (processMessage < 0) return alive;
 
-				for (auto k = 0; k < process; k++) {
-
+				for (auto k = 0; k < processMessage; k++) {
+					t_binary basisIn;
+					inputSignals[0]->bufferGet(&basisIn);
 					alive = true;
 
-					t_binary inBit;
-					inputSignals[0]->bufferGet(&inBit);
-
-					if (inBit == mData[k]) {
+					if (basisIn == mData[k]) {
 						outputSignals[0]->bufferPut((t_binary)1);
-						mDataOut.append("1");
+						mDataOut.append(to_string((int)1));
 					}
 					else {
 						outputSignals[0]->bufferPut((t_binary)0);
-						mDataOut.append("0");
+						mDataOut.append(to_string((int)0));
 					}
 				}
 				break;
 		}
 
-		int dLength = mDataLength - process;
-		mData.erase(mData.begin(), mData.begin() + process);
+		int dLength = mDataLength - processMessage;
+		mData.erase(mData.begin(), mData.begin() + processMessage);
 		if (dLength == 0) {
-			storedMessages.erase(storedMessages.begin() + n);
+			storedMessages.erase(storedMessages.begin(),storedMessages.begin() + n);
 			numberOfStoredMessages = (int)storedMessages.size();
 		}
 		else {
-			storedMessages[n].messageDataLength = to_string(dLength);
+			storedMessages[n].messageDataLength = to_string((int)mData.size());
 			string mDataUpdated{ "" };
 			for (unsigned int m = 0; m < mData.size(); m++) {
 				mDataUpdated.append(to_string(mData[m]));

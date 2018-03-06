@@ -14,9 +14,13 @@ class SinglePhotonDetector : public Block {
 	t_integer path{ 0 };
 	std::default_random_engine generator;
 	double probabilityDarkCount{ 0.0 };
+	int out{ 0 };
+	int samplesPerSymbol{ 1 };
+	bool firstTime{ true };
 
 public:
 
+	SinglePhotonDetector() {};
 	SinglePhotonDetector(vector<Signal *> &inputSignals, vector<Signal *> &outputSignals) : Block(inputSignals, outputSignals){};
 
 	void initialize(void);

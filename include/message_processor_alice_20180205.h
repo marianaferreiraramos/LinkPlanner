@@ -26,11 +26,14 @@ private:
 	/*Input Parameters*/
 	t_message_data_length maxMessageDataLength{ 64 };
 	int maxNumberOfStoredMessages{ 1 };
+	int maxOfStoredBasis{ 64 };
 
 	/*State Variables*/
 
 	vector<t_message> storedMessages;
 	int numberOfStoredMessages{ 0 };
+	vector<t_binary> storedBasis;
+	int numberOfStoredBasis{ 0 };
 
 	/*Private Methods*/
 	t_message_type getMessageType(const t_message& msg);
@@ -44,6 +47,7 @@ private:
 
 	bool processStoredMessages();
 	bool processInMessages();
+	bool ProcessBasisToStore();
 };
 
 

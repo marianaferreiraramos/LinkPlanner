@@ -12,6 +12,7 @@
 # include <vector>
 # include <algorithm> 
 # include <random>
+#include <chrono>
 
 # include "netxpto_20180118.h"
 
@@ -41,7 +42,7 @@ class BinarySource : public Block {
  public:
 
 	 // Input parameters
-
+	 std::default_random_engine generator;
 	 BinarySourceMode mode{ PseudoRandom };
 
 	 double probabilityOfZero{ 0.5 };
