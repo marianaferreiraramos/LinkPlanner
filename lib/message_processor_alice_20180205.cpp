@@ -20,8 +20,8 @@ bool MessageProcessorAlice::runBlock(void) {
 	bool process{ false }, alive{ false };
 
 	do {
-		process = ProcessBasisToStore();
-		alive = alive || process;
+	//	process = ProcessBasisToStore();
+	//	alive = alive || process;
 		process = processStoredMessages();
 		alive = alive || process;
 		process = processInMessages();
@@ -55,11 +55,13 @@ bool MessageProcessorAlice::ProcessBasisToStore() {
 bool MessageProcessorAlice::processStoredMessages() {
 
 	bool alive{ false };
+	int ready = inputSignals[0]->ready();
+
 	int space0 = outputSignals[0]->space();
 	int space1 = outputSignals[1]->space();
 	int space = min(space0, space1);
 
-	int process = min(space, numberOfStoredBasis);
+	int process = min(space, ready);
 
 	if (process <= 0) return alive;
 
@@ -76,16 +78,17 @@ bool MessageProcessorAlice::processStoredMessages() {
 
 			case BasisReconciliation:
 
-				int ready = min(numberOfStoredBasis, (int)mData.size());
-				processMessage = min(ready,space0);
+				int readyMessage = min(ready, (int)mData.size());
+				processMessage = min(readyMessage,space0);
 
 				if (processMessage < 0) return alive;
 
 				for (auto k = 0; k < processMessage; k++) {
-
+					t_binary basisIn;
+					inputSignals[0]->bufferGet(&basisIn);
 					alive = true;
 
-					if (storedBasis[k] == mData[k]) {
+					if (basisIn == mData[k]) {
 						outputSignals[0]->bufferPut((t_binary)1);
 						mDataOut.append(to_string((int)1));
 					}
@@ -94,16 +97,13 @@ bool MessageProcessorAlice::processStoredMessages() {
 						mDataOut.append(to_string((int)0));
 					}
 				}
-
-				storedBasis.erase(storedBasis.begin(),storedBasis.begin() + processMessage);
-				numberOfStoredBasis = numberOfStoredBasis - processMessage;
 				break;
 		}
 
 		int dLength = mDataLength - processMessage;
 		mData.erase(mData.begin(), mData.begin() + processMessage);
 		if (dLength == 0) {
-			storedMessages.erase(storedMessages.begin() + n);
+			storedMessages.erase(storedMessages.begin(),storedMessages.begin() + n);
 			numberOfStoredMessages = (int)storedMessages.size();
 		}
 		else {
