@@ -18,6 +18,7 @@ BobQKD::BobQKD(vector<Signal*> &inputSignal, vector <Signal*> &outputSignal) : S
 	BB7.initializeBlock(vector<Signal*>{&Bob_10, inputSignals[4]}, vector<Signal*>{&Bob_5, &C_C_2});
 
 	BB6.initializeBlock( vector<Signal*>{&Bob_11, &Bob_5}, vector<Signal*>{&Bob_6, &Bob_9} );
+	BB6.setSymbolPeriod(0.001);
 
 	//BBSink.initializeBlock(vector<Signal*>{&Bob_6}, vector<Signal*>{});
 	//BBSink.setNumberOfSamples(500);

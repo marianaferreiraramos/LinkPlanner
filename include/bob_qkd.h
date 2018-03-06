@@ -64,7 +64,7 @@ class BobQKD : public SuperBlock {
 
 	MessageProcessorBob BB7;
 
-	BitDecision BB6;
+	Demux_1_2 BB6;
 
 	Fork BB10;
 	

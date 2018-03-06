@@ -29,7 +29,7 @@ AliceQKD::AliceQKD(vector<Signal*> &inputSignal, vector <Signal*> &outputSignal)
 	BA14.initializeBlock(vector<Signal*>{&alice_10}, vector<Signal*>{});
 	BA7.initializeBlock(vector<Signal*>{&alice_6, inputSignals[4]}, vector<Signal*>{&alice_5, &C_C_1});
 	BA9.initializeBlock(vector<Signal*>{&alice_9, &alice_5}, vector<Signal*>{&alice_12, &alice_13});
-	BA9.setSymbolPeriod(alice_9.getSymbolPeriod());
+	BA9.setSymbolPeriod(0.001);
 	BA15.initializeBlock(vector<Signal*>{&alice_13}, vector<Signal*>{});
 //	BA15.setNumberOfSamples(500);
 	BA15.setDisplayNumberOfSamples(true);
