@@ -117,7 +117,7 @@ bool MessageProcessorBob::ProcessStoredMessage() {
 				for (auto k = 0; k < process; k++) {
 
 					alive = true;
-					outputSignals[0]->bufferPut((t_real)mData[k]);
+					outputSignals[0]->bufferPut((t_binary)mData[k]);
 
 				}
 				break;

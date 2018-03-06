@@ -22,7 +22,7 @@ BobQKD::BobQKD(vector<Signal*> &inputSignal, vector <Signal*> &outputSignal) : S
 
 	//BBSink.initializeBlock(vector<Signal*>{&Bob_6}, vector<Signal*>{});
 	//BBSink.setNumberOfSamples(500);
-	BBSink.setDisplayNumberOfSamples(true);
+	//BBSink.setDisplayNumberOfSamples(true);
 
 	BBSink0.initializeBlock(vector<Signal*>{&Bob_9}, vector<Signal*>{});
 

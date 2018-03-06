@@ -52,18 +52,18 @@ bool Demux_1_2::runBlock(void) {
 				cout << "Invalyde logical value, demux_1_2.cpp \n";
 		}
 	}
-	else if ((inSignalType1 == RealValue) && (inSignalType2 == RealValue)) {
+	else if ((inSignalType1 == RealValue) && (inSignalType2 == BinaryValue)) {
 		t_real binValue;
-		t_real logicalValue;
+		t_binary logicalValue;
 
 		for (int i = 0; i < length; i++) {
 			inputSignals[0]->bufferGet(&binValue);
 			inputSignals[1]->bufferGet(&logicalValue);
 
-			if (logicalValue == 1.0) {
+			if (logicalValue == 1) {
 				outputSignals[0]->bufferPut((t_binary)binValue);
 			}
-			else if (logicalValue == 0.0)
+			else if (logicalValue == 0)
 				outputSignals[1]->bufferPut((t_binary)binValue);
 			else
 				cout << "Invalyde logical value, demux_1_2.cpp \n";

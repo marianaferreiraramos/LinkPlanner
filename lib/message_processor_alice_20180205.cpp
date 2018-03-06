@@ -95,7 +95,7 @@ bool MessageProcessorAlice::processStoredMessages() {
 					}
 				}
 
-				storedBasis.erase(storedBasis.begin() + processMessage);
+				storedBasis.erase(storedBasis.begin(),storedBasis.begin() + processMessage);
 				numberOfStoredBasis = numberOfStoredBasis - processMessage;
 				break;
 		}
