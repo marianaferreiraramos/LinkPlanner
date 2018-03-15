@@ -17,33 +17,12 @@ void MessageProcessorBob::initialize(void) {
 bool MessageProcessorBob::runBlock(void) {
 	bool alive{ false };
 	do {
-		alive = ProcessBasisToStore();
-		alive = alive || ProcessMessageToSend();
+		alive = ProcessMessageToSend();
 		alive = alive || ProcessStoredMessage();
 		alive = alive || ProcessReceivedMessage();
-		alive = alive || ProcessStoredMessage();
+		alive = alive || ProcessMessageToSend();
 		
 	} while (alive);
-	return alive;
-}
-
-bool MessageProcessorBob::ProcessBasisToStore() {
-	bool alive{ false };
-	int ready = inputSignals[0]->ready();
-
-	int space = maxOfStoredBasis - numberOfStoredBasis;
-
-	int process = min(ready, space);
-
-	if (process > 0){
-		for (auto k = 0; k < process; k++) {
-			t_real basisIn;
-			inputSignals[0]->bufferGet(&basisIn);
-			storedBasis.push_back((int)basisIn);
-			numberOfStoredBasis++;
-			alive = true;
-		}
-	}
 	return alive;
 }
 
@@ -52,27 +31,30 @@ bool MessageProcessorBob::ProcessMessageToSend() {
 
 	int space = outputSignals[1]->space();
 
-	if (space > 0) {
-		if (numberOfStoredBasis >= messageDataLength) {
+	if (space <= 0) return alive;
 
-			string mDataToSend{ "" };
-			for (auto k = 0; k < messageDataLength; k++) {
-				mDataToSend.append(to_string(storedBasis[k]));
-			}
+	int ready = inputSignals[0]->ready();
+	int processMessage = min(ready, maxMessageDataLength);
 
-			storedBasis.erase(storedBasis.begin(), storedBasis.begin() + messageDataLength);
-			numberOfStoredBasis = (int)storedBasis.size();
-
-			t_message messageToSend;
-
-			messageToSend.messageData = mDataToSend;
-			messageToSend.messageDataLength = to_string((t_message_data_length)messageDataLength);
-			messageToSend.messageType = BasisReconciliation;
-
-			outputSignals[1]->bufferPut((t_message)messageToSend);
-			alive = true;
-		}
+	if (processMessage <= 0) return alive;
+	
+	string mData{ "" };
+	for (auto l = 0; l < processMessage; l++) {
+		t_real basisBob;
+		inputSignals[0]->bufferGet(&basisBob);
+		mData.append(to_string((int)basisBob));
 	}
+
+	t_message messageToSend;
+	messageToSend.messageData = mData;
+	messageToSend.messageDataLength = to_string((t_message_data_length)mData.size());
+	messageToSend.messageType = BasisReconciliation;
+
+	outputSignals[1]->bufferPut((t_message)messageToSend);
+
+	alive = true;
+	
+	
 	return alive;
 }
 

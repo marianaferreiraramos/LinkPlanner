@@ -99,6 +99,9 @@
     <ClCompile Include="mutual_information_20180305.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\lib\bit_decider_20170818.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\alice_qkd.h">
@@ -183,6 +186,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mutual_information_20180305.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\bit_decider_20170818.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

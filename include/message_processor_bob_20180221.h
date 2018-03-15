@@ -20,7 +20,7 @@ public:
 
 private:
 	/*Input Parameters*/
-	t_message_data_length messageDataLength{ 64 };
+	t_message_data_length maxMessageDataLength{ 64 };
 	int maxNumberOfStoredMessages{ 1 };
 	int maxOfStoredBasis{ 64 };
 

@@ -1,7 +1,3 @@
-#include <algorithm>
-#include <complex>
-
-#include "netxpto_20180131.h"
 #include "bit_decider_20170818.h"
 
 

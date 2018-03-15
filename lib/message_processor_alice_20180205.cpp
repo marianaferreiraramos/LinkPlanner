@@ -26,6 +26,8 @@ bool MessageProcessorAlice::runBlock(void) {
 		alive = alive || process;
 		process = processInMessages();
 		alive = alive || process;
+		process = processStoredMessages();
+		alive = alive || process;
 	} while (process);
 
 	return alive;
@@ -103,7 +105,7 @@ bool MessageProcessorAlice::processStoredMessages() {
 		int dLength = mDataLength - processMessage;
 		mData.erase(mData.begin(), mData.begin() + processMessage);
 		if (dLength == 0) {
-			storedMessages.erase(storedMessages.begin(),storedMessages.begin() + n);
+			storedMessages.erase(storedMessages.begin(),storedMessages.begin() + n+1);
 			numberOfStoredMessages = (int)storedMessages.size();
 		}
 		else {
