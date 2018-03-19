@@ -20,7 +20,7 @@ class SinglePhotonReceiver : public SuperBlock{
 	TimeContinuousAmplitudeContinuousReal SPR03{ "SPR03.sgn" }; // single photon detector output
 	TimeContinuousAmplitudeContinuousReal SPR04{ "SPR04.sgn" }; //clock
 	TimeContinuousAmplitudeContinuousReal SPR05{ "SPR05.sgn" }; //sampler
-	TimeDiscreteAmplitudeDiscreteReal SPR06{ "SPR06.sgn" }; //sampler
+	TimeContinuousAmplitudeContinuousReal SPR06{ "SPR06.sgn" }; //sampler
 	Binary SPR07{ "SPR07.sgn" };
 	Binary SPR08{ "SPR08.sgn" };
 	TimeDiscreteAmplitudeDiscreteReal SPR09{ "SPR09.sgn" };
@@ -45,7 +45,6 @@ class SinglePhotonReceiver : public SuperBlock{
 public:
 
 	/* Input Parameters */
-	double DetectorProbabilityDarkCount{ 0.001 };
 	int samplesToSkip{ 0 };
 	PulseShaperFilter filterType{ Square };
 
