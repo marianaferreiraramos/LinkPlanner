@@ -1,0 +1,71 @@
+\clearpage
+
+\section{Optical Fiber}
+
+This block of code simulates an optical fiber used as quantum channel, which intends to insert possible errors occurred during the transmission, such as State of Polarization (SOP) changes. These SOP changes can be simulated using deterministic or stochastic methods.
+
+
+\subsection*{Functional description}
+
+This block accepts one optical input signal represented as an array of two complex numbers, and outputs other optical signal that corresponds to the input signal rotated by an angle $\theta$. 
+
+This block is able to simulate SOP changes using deterministic (static or dynamic) and stochastic methods. The required function mode must be set when the block is initialized. Furthermore, other input parameters should be also set at initialization.
+
+
+\subsection*{Input parameters}
+
+This block has some input parameters that can be manipulated by the user in order to change the basic configuration of the optical fiber. Each parameter has associated a function that allows for its change. In the following table (table~\ref{table}) the input parameters and corresponding functions are summarized.
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{| m{3,5cm} | m{5,8cm} |  m{2,5cm} | m{4cm} | }
+			\hline
+			\textbf{Input parameters} & \textbf{Function} & \textbf{Accepted values} \\ \hline
+			sopType                   & Simulation type that the user intends to simulate. & SOPType\\
+            zDistance                 & Fiber length in km & double \\
+            tetha                     & Angle for static rotation in degrees & double \\
+            lambda                    & Wavelength in nm & integer \\
+            Dp                        & dispersion coefficient parameter in ps/nm.km & double \\
+
+			\hline
+		\end{tabular}
+		\caption{List of input parameters of the block Optical Fiber} \label{table}
+	\end{center}
+\end{table}
+
+
+\subsection*{Methods}
+
+OpticalFiber(vector <Signal*> \&inputSignals, vector <Signal*> \&outputSignals)(\textbf\{constructor\})
+\bigbreak
+void initialize(void)
+\bigbreak
+bool runBlock(void)
+\bigbreak
+void setSOPType(SOPType sType)
+\bigbreak
+void setFiberLength(double fLength)
+\bigbreak
+void setRotationAngle(double angle)
+\bigbreak
+void setWaveLength(int wLength)
+\bigbreak
+void setDispersionCoefficient(double dCoefficient)
+
+\pagebreak
+
+\subsection*{Input Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:}PhotonStreamXY
+
+\subsection*{Output Signals}
+
+\subparagraph*{Number:} 1
+
+\subparagraph*{Type:} PhotonStreamXY
+
+\subsection*{Example}
+
+\subsection*{Sugestions for future improvement}

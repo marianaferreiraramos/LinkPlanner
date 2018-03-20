@@ -162,6 +162,7 @@
     <ClCompile Include="..\..\lib\message_processor_bob_20180221.cpp" />
     <ClCompile Include="..\..\lib\m_qam_mapper_20180118.cpp" />
     <ClCompile Include="..\..\lib\netxpto_20180118.cpp" />
+    <ClCompile Include="..\..\lib\optical_fiber_20180319.cpp" />
     <ClCompile Include="..\..\lib\polarization_beam_splitter_20180109.cpp" />
     <ClCompile Include="..\..\lib\polarizer_20180113.cpp" />
     <ClCompile Include="..\..\lib\pulse_shaper_20180111.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="..\..\include\message_processor_bob_20180221.h" />
     <ClInclude Include="..\..\include\m_qam_mapper_20180118.h" />
     <ClInclude Include="..\..\include\netxpto_20180118.h" />
+    <ClInclude Include="..\..\include\optical_fiber_20180319.h" />
     <ClInclude Include="..\..\include\polarization_beam_splitter_20180109.h" />
     <ClInclude Include="..\..\include\polarizer_20180113.h" />
     <ClInclude Include="..\..\include\pulse_shaper_20180111.h" />
